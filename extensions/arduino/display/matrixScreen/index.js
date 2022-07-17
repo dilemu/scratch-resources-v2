@@ -1,13 +1,13 @@
 const matrixScreen = formatMessage => ({
     name: "点阵屏",
-    extensionId: 'matrixScreen',
+    extensionId: 'DBitMatrixScreen',
     version: '1.0.0',
     supportDevice: ['arduinoNano'],
     author: 'bjppss',
-    iconURL: `asset/lcd.png`,
+    iconURL: `asset/matrixScreen.png`,
     description: formatMessage({
-        id: 'lcd.description',
-        default: '1602 liquid crystal display which based on I2C bus.'
+        id: 'DBitMatrixScreen.description',
+        default: '8x8点阵屏，可以用来显示点阵图案'
     }),
     featured: true,
     blocks: 'blocks.js',
@@ -17,7 +17,7 @@ const matrixScreen = formatMessage => ({
     library: 'lib',
     official: true,
     tags: ['display'],
-    helpLink: 'https://openblockcc.gitee.io/wiki/main'
+    helpLink: 'https://delightmom.com'
 });
 
 module.exports = matrixScreen;
