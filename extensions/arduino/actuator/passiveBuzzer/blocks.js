@@ -5,11 +5,17 @@ function addBlocks (Blockly) {
     const colour = '#B943FF';
     const secondaryColour = '#9900FF';
 
-    const digitalPins = Blockly.getMainWorkspace().getFlyout()
-        .getFlyoutItems()
-        .find(block => block.type === 'arduino_pin_setDigitalOutput')
-        .getField('PIN')
-        .getOptions();
+    const digitalPins = [
+        ["A0-A1", "A0-A1"],
+        ["A2-A3", "A2-A3"],
+        ["A4-A5", "A4-A5"],
+        ["0-1", "0-1"],
+        ["2-3", "2-3"],
+        ["5-6", "5-6"],
+        ["4-7", "4-7"],
+        ["10-11", "10-11"],
+        ["12-13", "12-13"]
+    ]
 
     const note = [
         ['C3', 'note_C3'],
@@ -51,110 +57,142 @@ function addBlocks (Blockly) {
     ];
 
     const beatTime = [
-        ['1', '1'],
-        ['1/2', '0.5'],
-        ['1/4', '0.25'],
-        ['1/8', '0.125'],
-        ['1/16', '0.0625'],
-        ['2', '2'],
-        ['4', '4']
+        ['一拍', '1'],
+        ['二分之一', '0.5'],
+        ['四分之一', '0.25'],
+        ['八分之一', '0.125'],
+        ['十六分之一', '0.0625'],
     ];
 
-    Blockly.Blocks.passiveBuzzer_init = {
+    Blockly.Blocks.passiveBuzzer_toneSetPlay = {
         init: function () {
             this.jsonInit({
-                message0: Blockly.Msg.PASSIVEBUZZER_INIT,
+                message0: "播放 蜂鸣器 %1 音调为 %2 节拍为 %3",
                 args0: [
                     {
-                        type: 'field_dropdown',
-                        name: 'PIN',
+                        type: "field_dropdown",
+                        name: "PIN",
                         options: digitalPins
-                    }
-                ],
-                colour: colour,
-                secondaryColour: secondaryColour,
-                extensions: ['shape_statement']
-            });
-        }
-    };
-
-    Blockly.Blocks.passiveBuzzer_playToneForBeat = {
-        init: function () {
-            this.jsonInit({
-                message0: Blockly.Msg.PASSIVEBUZZER_PLAYTONEFORBEAT,
-                args0: [
+                    },
                     {
-                        type: 'field_dropdown',
-                        name: 'FREQ',
+                        type: "field_dropdown",
+                        name: "TONE",
                         options: note
                     },
                     {
-                        type: 'field_dropdown',
-                        name: 'TIME',
+                        type: "field_dropdown",
+                        name: "BEAT",
                         options: beatTime
-                    }
+                    },
                 ],
                 colour: colour,
-                secondaryColour: secondaryColour,
                 extensions: ['shape_statement']
-            });
+            })
         }
     };
 
-    Blockly.Blocks.passiveBuzzer_setTempo = {
-        init: function () {
-            this.jsonInit({
-                message0: Blockly.Msg.PASSIVEBUZZER_SETTEMPO,
-                args0: [
-                    {
-                        type: 'input_value',
-                        name: 'BPM'
-                    }
-                ],
-                colour: colour,
-                secondaryColour: secondaryColour,
-                extensions: ['shape_statement']
-            });
-        }
-    };
+    // Blockly.Blocks.passiveBuzzer_toneNormalPlay = {
+    //     init: function () {
+    //         this.jsonInit({
+    //             message0: "播放管脚 %1 蜂鸣器 频率为 %2 时间为 %3 ms",
+    //             args0: [
+    //                 {
+    //                     type: "field_dropdown",
+    //                     name: "PIN",
+    //                     options: digitalPins
+    //                 },
+    //                 {
+    //                     type: "input_value",
+    //                     name: "FREQUENCY"
+    //                 },
+    //                 {
+    //                     type: "input_value",
+    //                     name: "TIME"
+    //                 },
+    //             ],
+    //             colour: colour,
+    //             extensions: ['shape_statement']
+    //         })
+    //     }
+    // };
 
-    Blockly.Blocks.passiveBuzzer_playRingtone = {
-        init: function () {
-            this.jsonInit({
-                message0: Blockly.Msg.PASSIVEBUZZER_PLAYRINGTONE,
-                args0: [
-                    {
-                        type: 'field_dropdown',
-                        name: 'NO',
-                        options: [
-                            [Blockly.Msg.PASSIVEBUZZER_CONNECTION, 'R_connection'],
-                            [Blockly.Msg.PASSIVEBUZZER_DISCONNECTION, 'R_disconnection'],
-                            [Blockly.Msg.PASSIVEBUZZER_DIDI, 'R_buttonPushed'],
-                            [Blockly.Msg.PASSIVEBUZZER_MODE1, 'R_mode1'],
-                            [Blockly.Msg.PASSIVEBUZZER_MODE2, 'R_mode2'],
-                            [Blockly.Msg.PASSIVEBUZZER_MODE3, 'R_mode3'],
-                            [Blockly.Msg.PASSIVEBUZZER_SURPRISE, 'R_surprise'],
-                            [Blockly.Msg.PASSIVEBUZZER_OHOOH, 'R_OhOoh'],
-                            [Blockly.Msg.PASSIVEBUZZER_OHOOH2, 'R_OhOoh2'],
-                            [Blockly.Msg.PASSIVEBUZZER_CUDDLY, 'R_cuddly'],
-                            [Blockly.Msg.PASSIVEBUZZER_SLEEPING, 'R_sleeping'],
-                            [Blockly.Msg.PASSIVEBUZZER_HAPPY, 'R_happy'],
-                            [Blockly.Msg.PASSIVEBUZZER_SUPERHAPPY, 'R_superHappy'],
-                            [Blockly.Msg.PASSIVEBUZZER_HAPPYSHORT, 'R_happy_short'],
-                            [Blockly.Msg.PASSIVEBUZZER_SAD, 'R_sad'],
-                            [Blockly.Msg.PASSIVEBUZZER_CONFUSED, 'R_confused'],
-                            [Blockly.Msg.PASSIVEBUZZER_FART1, 'R_fart1'],
-                            [Blockly.Msg.PASSIVEBUZZER_FART2, 'R_fart2'],
-                            [Blockly.Msg.PASSIVEBUZZER_FART3, 'R_fart3']
-                        ]
-                    }
-                ],
-                colour: colour,
-                secondaryColour: secondaryColour,
-                extensions: ['shape_statement']
-            });
-        }
-    };
+    // Blockly.Blocks.passiveBuzzer_playToneForBeat = {
+    //     init: function () {
+    //         this.jsonInit({
+    //             message0: Blockly.Msg.PASSIVEBUZZER_PLAYTONEFORBEAT,
+    //             args0: [
+    //                 {
+    //                     type: 'field_dropdown',
+    //                     name: 'FREQ',
+    //                     options: note
+    //                 },
+    //                 {
+    //                     type: 'field_dropdown',
+    //                     name: 'TIME',
+    //                     options: beatTime
+    //                 }
+    //             ],
+    //             colour: colour,
+    //             secondaryColour: secondaryColour,
+    //             extensions: ['shape_statement']
+    //         });
+    //     }
+    // };
+
+    // Blockly.Blocks.passiveBuzzer_setTempo = {
+    //     init: function () {
+    //         this.jsonInit({
+    //             message0: Blockly.Msg.PASSIVEBUZZER_SETTEMPO,
+    //             args0: [
+    //                 {
+    //                     type: 'input_value',
+    //                     name: 'BPM'
+    //                 }
+    //             ],
+    //             colour: colour,
+    //             secondaryColour: secondaryColour,
+    //             extensions: ['shape_statement']
+    //         });
+    //     }
+    // };
+
+    // Blockly.Blocks.passiveBuzzer_playRingtone = {
+    //     init: function () {
+    //         this.jsonInit({
+    //             message0: Blockly.Msg.PASSIVEBUZZER_PLAYRINGTONE,
+    //             args0: [
+    //                 {
+    //                     type: 'field_dropdown',
+    //                     name: 'NO',
+    //                     options: [
+    //                         [Blockly.Msg.PASSIVEBUZZER_CONNECTION, 'R_connection'],
+    //                         [Blockly.Msg.PASSIVEBUZZER_DISCONNECTION, 'R_disconnection'],
+    //                         [Blockly.Msg.PASSIVEBUZZER_DIDI, 'R_buttonPushed'],
+    //                         [Blockly.Msg.PASSIVEBUZZER_MODE1, 'R_mode1'],
+    //                         [Blockly.Msg.PASSIVEBUZZER_MODE2, 'R_mode2'],
+    //                         [Blockly.Msg.PASSIVEBUZZER_MODE3, 'R_mode3'],
+    //                         [Blockly.Msg.PASSIVEBUZZER_SURPRISE, 'R_surprise'],
+    //                         [Blockly.Msg.PASSIVEBUZZER_OHOOH, 'R_OhOoh'],
+    //                         [Blockly.Msg.PASSIVEBUZZER_OHOOH2, 'R_OhOoh2'],
+    //                         [Blockly.Msg.PASSIVEBUZZER_CUDDLY, 'R_cuddly'],
+    //                         [Blockly.Msg.PASSIVEBUZZER_SLEEPING, 'R_sleeping'],
+    //                         [Blockly.Msg.PASSIVEBUZZER_HAPPY, 'R_happy'],
+    //                         [Blockly.Msg.PASSIVEBUZZER_SUPERHAPPY, 'R_superHappy'],
+    //                         [Blockly.Msg.PASSIVEBUZZER_HAPPYSHORT, 'R_happy_short'],
+    //                         [Blockly.Msg.PASSIVEBUZZER_SAD, 'R_sad'],
+    //                         [Blockly.Msg.PASSIVEBUZZER_CONFUSED, 'R_confused'],
+    //                         [Blockly.Msg.PASSIVEBUZZER_FART1, 'R_fart1'],
+    //                         [Blockly.Msg.PASSIVEBUZZER_FART2, 'R_fart2'],
+    //                         [Blockly.Msg.PASSIVEBUZZER_FART3, 'R_fart3']
+    //                     ]
+    //                 }
+    //             ],
+    //             colour: colour,
+    //             secondaryColour: secondaryColour,
+    //             extensions: ['shape_statement']
+    //         });
+    //     }
+    // };
 
     return Blockly;
 }

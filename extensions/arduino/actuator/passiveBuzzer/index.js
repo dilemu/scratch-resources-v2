@@ -1,17 +1,16 @@
 const passiveBuzzer = formatMessage => ({
     name: formatMessage({
-        id: 'passiveBuzzer.name',
-        default: 'Passive Buzzer'
+        id: 'DBitPassiveBuzzer.name',
+        default: '有源蜂鸣器'
     }),
-    extensionId: 'passiveBuzzer',
+    extensionId: 'DBitPassiveBuzzer',
     version: '1.0.0',
-    supportDevice: ['arduinoUno', 'arduinoNano', 'arduinoMini', 'arduinoLeonardo',
-        'arduinoMega2560', 'arduinoEsp8266'],
-    author: 'ArthurZheng',
+    supportDevice: ['arduinoNano'],
+    author: 'bjppss',
     iconURL: `asset/passiveBuzzer.png`,
     description: formatMessage({
-        id: 'passiveBuzzer.description',
-        default: 'Unlike the active buzzer, the passive buzzer can be used to make different tones of sound and play some ringtones.'
+        id: 'DBitPassiveBuzzer.description',
+        default: '播放不同的音调和节拍'
     }),
     featured: true,
     blocks: 'blocks.js',
@@ -20,8 +19,8 @@ const passiveBuzzer = formatMessage => ({
     msg: 'msg.js',
     library: 'lib',
     official: true,
-    tags: ['actuator'],
-    helpLink: 'https://openblockcc.gitee.io/wiki/main'
+    tags: ['motion'],
+    helpLink: 'https://delightmom.com'
 });
 
 module.exports = passiveBuzzer;
