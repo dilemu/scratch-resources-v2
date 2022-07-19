@@ -1,13 +1,13 @@
 const matrixScreen = formatMessage => ({
-    name: "单按钮模块",
-    extensionId: 'DBitSingleButton',
+    name: "LED发光模块",
+    extensionId: 'DBitLEDButton',
     version: '1.0.0',
     supportDevice: ['arduinoNano'],
     author: 'bjppss',
     iconURL: `asset/matrixScreen.png`,
     description: formatMessage({
-        id: 'DBitSingleButton.description',
-        default: '按下输出高电平，松开输出低电平，有抖动'
+        id: 'DBitLEDButton.description',
+        default: '高电平灯亮，低电平灯灭'
     }),
     featured: true,
     blocks: 'blocks.js',
