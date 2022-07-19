@@ -29,6 +29,12 @@ function addBlocks (Blockly) {
         ["暗", false],
     ]
 
+    const controlList = [
+        ["开", "displayOn"],
+        ["关", "displayOff"],
+        ["清屏", "clear"]
+    ]
+
     Blockly.Blocks.DBitFourDigitClockDisplay_showText = {
         init: function () {
             this.jsonInit({
@@ -43,7 +49,9 @@ function addBlocks (Blockly) {
                         type: "input_value",
                         name: "TEXT"
                     }
-                ]
+                ],
+                colour: colour,
+                extensions: ['shape_statement']
             });
         }
     };
@@ -52,6 +60,47 @@ function addBlocks (Blockly) {
         init: function () {
             this.jsonInit({
                 message0: "设置 数码管 管脚 %1 第 %2 个小数点 %3",
+                args0: [
+                    {
+                        type: "field_dropdown",
+                        name: "PIN",
+                        options: digitalPins
+                    },
+                    {
+                        type: "field_dropdown",
+                        name: "DOT_INDEX",
+                        options: dotIndexList
+                    },
+                    {
+                        type: "field_dropdown",
+                        name: "DOT_STATE",
+                        options: dotState
+                    }
+                ],
+                colour: colour,
+                extensions: ['shape_statement']
+            })
+        }
+    }
+
+    Blockly.Blocks.DBitFourDigitClockDisplay_control = {
+        init: function () {
+            this.jsonInit({
+                message0: "设置 数码管 管脚 %1 的 %2",
+                args0: [
+                    {
+                        type: "field_dropdown",
+                        name: "PIN",
+                        options: digitalPins
+                    },
+                    {
+                        type: "field_dropdown",
+                        name: "CONTROL",
+                        options: controlList
+                    }
+                ],
+                colour: colour,
+                extensions: ['shape_statement']
             })
         }
     }

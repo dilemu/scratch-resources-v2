@@ -2,56 +2,50 @@
 /* eslint-disable max-len */
 /* eslint-disable require-jsdoc */
 function addGenerator (Blockly) {
-    Blockly.Arduino.fourDigitClockDisplay_init = function (block) {
-        const dio = block.getFieldValue('DIO');
-        const clk = block.getFieldValue('CLK');
-
-        Blockly.Arduino.includes_.fourDigitClockDisplay_init = `#include <TM1637.h>`;
-        Blockly.Arduino.definitions_.fourDigitClockDisplay_init = `TM1637 fourDigitClockDisplay(${clk}, ${dio});`;
-
-        return `fourDigitClockDisplay.init();\nfourDigitClockDisplay.set(2);\n`;
+    Blockly.Arduino.DBitFourDigitClockDisplay_showText = function (block) {
+        const pinList = block.getFieldValue('PIN');
+        const [a, b] = pinList.split('-');
+        const deviceName = `fourDigitClock_${a}_${b}`;
+        const text = Blockly.Arduino.valueToCode(block, 'TEXT', Blockly.Arduino.ORDER_ATOMIC);
+        Blockly.Arduino.includes_.DBitFourDigitClockDisplay = `#include <TM1650.h>`;
+        Blockly.Arduino.definitions_[deviceName] = `TM1650 ${deviceName}(${a}, ${b});`;
+        Blockly.Arduino.setups_[deviceName] = `${deviceName}.init();`;
+        const code = `${deviceName}.displayString(${text});\n`;
+        return code;
     };
 
-    Blockly.Arduino.fourDigitClockDisplay_setBrightness = function (block) {
-        const brt = Blockly.Arduino.valueToCode(block, 'BRT', Blockly.Arduino.ORDER_ATOMIC);
+    Blockly.Arduino.DBitFourDigitClockDisplay_showDot = function (block) {
+        const pinList = block.getFieldValue('PIN');
+        const [a, b] = pinList.split('-');
+        const deviceName = `fourDigitClock_${a}_${b}`;
+        const dotIndex = block.getFieldValue('DOT_INDEX');
+        const dotState = block.getFieldValue('DOT_STATE');
+        Blockly.Arduino.includes_.DBitFourDigitClockDisplay = `#include <TM1650.h>`;
+        Blockly.Arduino.definitions_[deviceName] = `TM1650 ${deviceName}(${a}, ${b});`;
+        Blockly.Arduino.setups_[deviceName] = `${deviceName}.init();`;
+        const code = `${deviceName}.setDot(${dotIndex}, ${dotState});\n`;
+        return code;
+    }
 
-        return `fourDigitClockDisplay.set(${brt});\n`;
-    };
-
-    Blockly.Arduino.fourDigitClockDisplay_brightnessNumber = function (block) {
-        const num = block.getFieldValue('NUM');
-
-        return [`${num}`, Blockly.Arduino.ORDER_ATOMIC];
-    };
-
-    Blockly.Arduino.fourDigitClockDisplay_displayNumber = function (block) {
-        const data = Blockly.Arduino.valueToCode(block, 'DATA', Blockly.Arduino.ORDER_ATOMIC);
-
-        return `fourDigitClockDisplay.displayNum(${data});\n`;
-    };
-
-    Blockly.Arduino.fourDigitClockDisplay_displayString = function (block) {
-        const data = Blockly.Arduino.valueToCode(block, 'DATA', Blockly.Arduino.ORDER_ATOMIC);
-
-        return `fourDigitClockDisplay.displayStr(${data});\n`;
-    };
-
-    Blockly.Arduino.fourDigitClockDisplay_display = function (block) {
-        const data = Blockly.Arduino.valueToCode(block, 'DATA', Blockly.Arduino.ORDER_ATOMIC);
-        const pos = block.getFieldValue('POS');
-
-        return `fourDigitClockDisplay.display(${pos}, ${data});\n`;
-    };
-
-    Blockly.Arduino.fourDigitClockDisplay_setPoint = function (block) {
-        const sta = block.getFieldValue('STA');
-
-        return `fourDigitClockDisplay.point(${sta});\n`;
-    };
-
-    Blockly.Arduino.fourDigitClockDisplay_clear = function () {
-        return `fourDigitClockDisplay.clearDisplay();\n`;
-    };
+    Blockly.Arduino.DBitFourDigitClockDisplay_control = function (block) {
+        const pinList = block.getFieldValue('PIN');
+        const [a, b] = pinList.split('-');
+        const deviceName = `fourDigitClock_${a}_${b}`;
+        const control = block.getFieldValue('CONTROL');
+        Blockly.Arduino.includes_.DBitFourDigitClockDisplay = `#include <TM1650.h>`;
+        Blockly.Arduino.definitions_[deviceName] = `TM1650 ${deviceName}(${a}, ${b});`;
+        Blockly.Arduino.setups_[deviceName] = `${deviceName}.init();`;
+        switch (control) {
+            case 'displayOn':
+                return `${deviceName}.displayOn();\n`;
+            case 'displayOff':
+                return `${deviceName}.displayOff();\n`;
+            case 'clear':
+                return `${deviceName}.clear();\n`;
+            default:
+                return '';
+        }
+    }
 
     return Blockly;
 }
