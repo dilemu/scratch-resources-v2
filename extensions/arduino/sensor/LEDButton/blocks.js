@@ -15,6 +15,26 @@ function addBlocks (Blockly) {
         ["10-11", "10-11"],
         ["12-13", "12-13"]
     ]
+    const fullDigitalPins = [
+        ["A0", "A0"],
+        ["A1", "A1"],
+        ["A2", "A2"],
+        ["A3", "A3"],
+        ["A4", "A4"],
+        ["A5", "A5"],
+        ["0", "0"],
+        ["1", "1"],
+        ["2", "2"],
+        ["3", "3"],
+        ["4", "4"],
+        ["5", "5"],
+        ["6", "6"],
+        ["7", "7"],
+        ["10", "10"],
+        ["11", "11"],
+        ["12", "12"],
+        ["13", "13"]
+    ]
     const digitalLevel = [
         ["打开", "HIGH"],
         ["关闭", "LOW"]
@@ -33,7 +53,7 @@ function addBlocks (Blockly) {
                     {
                         type: "field_dropdown",
                         name: "PIN",
-                        options: digitalPins
+                        options: fullDigitalPins
                     }
                 ],
                 colour: colour,

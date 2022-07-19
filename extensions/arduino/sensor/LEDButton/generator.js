@@ -3,10 +3,9 @@
 /* eslint-disable require-jsdoc */
 function addGenerator (Blockly) {
     Blockly.Arduino.DBitLEDButton_light = function (block) {
-        const pinList = block.getFieldValue('PIN');
+        const pin = block.getFieldValue('PIN');
         const level = block.getFieldValue('LEVEL');
-        const [a, b] = pinList.split('-');
-        return `digitalWrite(${b}, ${level});\n`;
+        return `digitalWrite(${pin}, ${level});\n`;
     }
     return Blockly;
 }
