@@ -2,15 +2,13 @@
 /* eslint-disable require-jsdoc */
 function addGenerator (Blockly) {
     Blockly.Arduino.ultrasonic_readDistance = function (block) {
-        const trig = block.getFieldValue('TRIG');
-        const echo = block.getFieldValue('ECHO');
-        const unit = block.getFieldValue('UNIT');
+        const pinList = block.getFieldValue('PIN');
+        const [a, b] = pinList.split('-');
 
         Blockly.Arduino.includes_.ultrasonic_readDistance = `#include <Ultrasonic.h>`;
-        Blockly.Arduino.definitions_[`ultrasonic_readDistance_${trig}_${echo}`] =
-            `Ultrasonic ultrasonic_${trig}_${echo}(${trig}, ${echo});`;
-
-        return [`ultrasonic_${trig}_${echo}.read(${unit})`, Blockly.Arduino.ORDER_ATOMIC];
+        Blockly.Arduino.definitions_[`ultrasonic_readDistance_${a}_${b}`] =
+            `Ultrasonic ultrasonic_${a}_${b}(${a}, ${b});`;
+        return [`ultrasonic_${a}_${b}.read(CM)`, Blockly.Arduino.ORDER_ATOMIC];
     };
 
 

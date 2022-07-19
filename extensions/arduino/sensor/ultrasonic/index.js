@@ -1,17 +1,16 @@
 const ultrasonic = formatMessage => ({
     name: formatMessage({
-        id: 'ultrasonic.name',
-        default: 'Ultrasonic'
+        id: 'DBitUltrasonic.name',
+        default: '超声波传感器'
     }),
     extensionId: 'ultrasonic',
     version: '1.0.0',
-    supportDevice: ['arduinoUno', 'arduinoNano', 'arduinoMini', 'arduinoLeonardo',
-        'arduinoMega2560', 'arduinoEsp32', 'arduinoEsp8266'],
-    author: 'Liang',
+    supportDevice: ['arduinoNano'],
+    author: 'bjppss',
     iconURL: `asset/ultrasonic.png`,
     description: formatMessage({
-        id: 'ultrasonic.description',
-        default: 'Standard ultrasonic distance measurement module.'
+        id: 'DBitUltrasonic.description',
+        default: '标准超声波测距模块'
     }),
     featured: true,
     blocks: 'blocks.js',
@@ -21,7 +20,7 @@ const ultrasonic = formatMessage => ({
     library: 'lib',
     official: true,
     tags: ['sensor'],
-    helpLink: 'https://openblockcc.gitee.io/wiki/main'
+    helpLink: 'https://delightmom.com'
 });
 
 module.exports = ultrasonic;

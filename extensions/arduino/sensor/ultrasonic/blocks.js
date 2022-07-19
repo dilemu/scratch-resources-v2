@@ -5,33 +5,27 @@ function addBlocks (Blockly) {
     const color = '#D39DDB';
     const secondaryColour = '#BA55D3';
 
-    const digitalPins = Blockly.getMainWorkspace().getFlyout()
-        .getFlyoutItems()
-        .find(block => block.type === 'arduino_pin_setDigitalOutput')
-        .getField('PIN')
-        .getOptions();
+    const digitalPins = [
+        ["A0-A1", "A0-A1"],
+        ["A2-A3", "A2-A3"],
+        ["A4-A5", "A4-A5"],
+        ["0-1", "0-1"],
+        ["2-3", "2-3"],
+        ["5-6", "5-6"],
+        ["4-7", "4-7"],
+        ["10-11", "10-11"],
+        ["12-13", "12-13"]
+    ]
 
     Blockly.Blocks.ultrasonic_readDistance = {
         init: function () {
             this.jsonInit({
-                message0: Blockly.Msg.ULTRASONIC_READ_DISTANCE,
+                message0: '读取 超声波传感器 管脚 %1 的测距值(CM)',
                 args0: [
                     {
                         type: 'field_dropdown',
-                        name: 'TRIG',
+                        name: 'PIN',
                         options: digitalPins
-                    },
-                    {
-                        type: 'field_dropdown',
-                        name: 'ECHO',
-                        options: digitalPins
-                    },
-                    {
-                        type: 'field_dropdown',
-                        name: 'UNIT',
-                        options: [
-                            ['cm', 'CM'],
-                            ['inch', 'INC']]
                     }
                 ],
                 colour: color,
