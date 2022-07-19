@@ -1,17 +1,16 @@
 const fourDigitClockDisplay = formatMessage => ({
     name: formatMessage({
-        id: 'fourDigitClockDisplay.name',
-        default: '4-Digit Clock Display'
+        id: 'DBitFourDigitClockDisplay.name',
+        default: '四位数码管'
     }),
-    extensionId: 'fourDigitClockDisplay',
+    extensionId: 'DBitFourDigitClockDisplay',
     version: '1.0.0',
-    supportDevice: ['arduinoUno', 'arduinoNano', 'arduinoMini', 'arduinoLeonardo',
-        'arduinoMega2560', 'arduinoEsp8266', 'arduinoEsp32'],
-    author: 'ArthurZheng',
+    supportDevice: ['arduinoNano'],
+    author: 'bjppss',
     iconURL: `asset/fourDigitClockDisplay.png`,
     description: formatMessage({
-        id: 'fourDigitClockDisplay.description',
-        default: '4-digit clock display module based on TM1637.'
+        id: 'DBitFourDigitClockDisplay.description',
+        default: 'TM1650四位数码管.'
     }),
     featured: true,
     blocks: 'blocks.js',
@@ -21,7 +20,7 @@ const fourDigitClockDisplay = formatMessage => ({
     library: 'lib',
     official: true,
     tags: ['display'],
-    helpLink: 'https://openblockcc.gitee.io/wiki/main'
+    helpLink: 'https://delightmom.com'
 });
 
 module.exports = fourDigitClockDisplay;
