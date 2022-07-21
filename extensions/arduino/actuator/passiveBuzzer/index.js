@@ -1,7 +1,7 @@
 const passiveBuzzer = formatMessage => ({
     name: formatMessage({
         id: 'DBitPassiveBuzzer.name',
-        default: '有源蜂鸣器'
+        default: '无源蜂鸣器'
     }),
     extensionId: 'DBitPassiveBuzzer',
     version: '1.0.0',
