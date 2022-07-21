@@ -13,7 +13,7 @@ function addMsg (Blockly) {
 
     Object.assign(Blockly.ScratchMsgs.locales["zh-cn"],
         {
-            DBITOBSTACLE: "避障传感器"
+            DBITRAINDROP: "雨滴传感器",
         }
     );
 

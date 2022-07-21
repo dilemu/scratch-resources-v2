@@ -13,7 +13,7 @@ function addMsg (Blockly) {
 
     Object.assign(Blockly.ScratchMsgs.locales["zh-cn"],
         {
-            DBITTOUCH: "触摸"
+            DBITTOUCH: "触摸传感器"
         }
     );
 
