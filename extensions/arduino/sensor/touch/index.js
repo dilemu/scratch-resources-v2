@@ -7,7 +7,7 @@ const matrixScreen = formatMessage => ({
     iconURL: `asset/matrixScreen.png`,
     description: formatMessage({
         id: 'DBitTouch.description',
-        default: '触摸时输出高电平，松开输出低电平'
+        default: '触摸开关，可感应人体、金属等'
     }),
     featured: true,
     blocks: 'blocks.js',
