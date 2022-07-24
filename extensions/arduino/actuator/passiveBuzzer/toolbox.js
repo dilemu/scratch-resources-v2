@@ -9,6 +9,19 @@ function addToolbox () {
         <field name="TONE">note_C3</field>
         <field name="BEAT">0.5</field>
     </block>
+    <block type="passiveBuzzer_toneNormalPlay">
+        <field name="PIN">A0-A1</field>
+        <value name="FREQUENCY">
+            <shadow type="math_number">
+                <field name="NUM">200</field>
+            </shadow>
+        </value>
+        <value name="TIME">
+            <shadow type="math_number">
+                <field name="NUM">500</field>
+            </shadow>
+        </value>
+    </block>
 </category>`;
 }
 

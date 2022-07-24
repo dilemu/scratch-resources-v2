@@ -91,30 +91,30 @@ function addBlocks (Blockly) {
         }
     };
 
-    // Blockly.Blocks.passiveBuzzer_toneNormalPlay = {
-    //     init: function () {
-    //         this.jsonInit({
-    //             message0: "播放管脚 %1 蜂鸣器 频率为 %2 时间为 %3 ms",
-    //             args0: [
-    //                 {
-    //                     type: "field_dropdown",
-    //                     name: "PIN",
-    //                     options: digitalPins
-    //                 },
-    //                 {
-    //                     type: "input_value",
-    //                     name: "FREQUENCY"
-    //                 },
-    //                 {
-    //                     type: "input_value",
-    //                     name: "TIME"
-    //                 },
-    //             ],
-    //             colour: colour,
-    //             extensions: ['shape_statement']
-    //         })
-    //     }
-    // };
+    Blockly.Blocks.passiveBuzzer_toneNormalPlay = {
+        init: function () {
+            this.jsonInit({
+                message0: "播放管脚 %1 蜂鸣器 频率为 %2 时间为 %3 ms",
+                args0: [
+                    {
+                        type: "field_dropdown",
+                        name: "PIN",
+                        options: digitalPins
+                    },
+                    {
+                        type: "input_value",
+                        name: "FREQUENCY"
+                    },
+                    {
+                        type: "input_value",
+                        name: "TIME"
+                    },
+                ],
+                colour: colour,
+                extensions: ['shape_statement']
+            })
+        }
+    };
 
     // Blockly.Blocks.passiveBuzzer_playToneForBeat = {
     //     init: function () {

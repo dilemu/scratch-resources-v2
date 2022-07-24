@@ -7,8 +7,8 @@ function addGenerator (Blockly) {
         const tone = block.getFieldValue('TONE');
         const beat = block.getFieldValue('BEAT');
         const [a, b] = pinList.split('-');
-        Blockly.Arduino.includes_[`passiveBuzzer${a}_init`] = `#include <Buzzer.h>`;
-        Blockly.Arduino.definitions_.passiveBuzzer_init = `Buzzer my_buzzer${a}(${a});\n` +
+        Blockly.Arduino.includes_.passiveBuzzer_init = `#include <Buzzer.h>`;
+        Blockly.Arduino.definitions_[`passiveBuzzer${a}_init`] = `Buzzer my_buzzer${a}(${a});\n` +
             `float beatTime = 60.0 / 120;`;
         const code = `my_buzzer${a}.tone(${tone}, ${beat} * 1000 * beatTime);\n`;
         return code;
@@ -17,12 +17,11 @@ function addGenerator (Blockly) {
     Blockly.Arduino.passiveBuzzer_toneNormalPlay = function (block) {
         const pinList = block.getFieldValue('PIN');
         const [a, b] = pinList.split('-');
-        Blockly.Arduino.includes_[`passiveBuzzer${a}_init`] = `#include <Buzzer.h>`;
-        Blockly.Arduino.definitions_.passiveBuzzer_init = `Buzzer my_buzzer${a}(${a});\n` +
-            `float beatTime = 60.0 / 120;`;
+        Blockly.Arduino.includes_.passiveBuzzer_init = `#include <Buzzer.h>`;
+        Blockly.Arduino.definitions_[`passiveBuzzer${a}_init`] = `Buzzer my_buzzer${a}(${a});\n`;
         const frequency = Blockly.Arduino.valueToCode(block, 'FREQUENCY', Blockly.Arduino.ORDER_ATOMIC);
         const time = Blockly.Arduino.valueToCode(block, 'TIME', Blockly.Arduino.ORDER_ATOMIC);
-        const code = `_Tone(${pinList}, ${frequency}, ${time});\n`;
+        const code = `my_buzzer${a}.tone(${frequency}, ${time});\n`;
         return code;
     }
     // Blockly.Arduino.passiveBuzzer_init = function (block) {
