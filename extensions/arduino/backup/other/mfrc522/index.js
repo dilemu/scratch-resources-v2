@@ -4,7 +4,7 @@ const mfrc522 = formatMessage => ({
         default: 'MFRC-522 Module'
     }),
     extensionId: 'mfrc522',
-    version: '1.0.0',
+    
     supportDevice: ['arduinoUno', 'arduinoNano', 'arduinoMini', 'arduinoLeonardo',
         'arduinoMega2560', 'arduinoEsp32', 'arduinoEsp8266'],
     author: 'ArthurZheng',

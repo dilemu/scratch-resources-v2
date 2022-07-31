@@ -1,13 +1,13 @@
 const matrixScreen = formatMessage => ({
     name: "全彩彩灯快",
     extensionId: 'DBitRGBLED',
-    version: '1.0.0',
+    
     supportDevice: ['arduinoNano'],
-    author: 'bjppss',
-    iconURL: `asset/matrixScreen.png`,
+    
+    iconURL: `asset/large.png`,
     description: formatMessage({
         id: 'DBitRGBLED.description',
-        default: '可以控制发出不同颜色的RGB光'
+        default: 'WS2812 RGB灯（1~10灯珠皆可）'
     }),
     featured: true,
     blocks: 'blocks.js',
@@ -17,7 +17,7 @@ const matrixScreen = formatMessage => ({
     library: 'lib',
     official: true,
     tags: ['display'],
-    helpLink: 'https://delightmom.com'
+    
 });
 
 module.exports = matrixScreen;

@@ -1,13 +1,13 @@
 const matrixScreen = formatMessage => ({
     name: "旋钮电位器",
     extensionId: 'DBitRotary',
-    version: '1.0.0',
+    
     supportDevice: ['arduinoNano'],
-    author: 'bjppss',
-    iconURL: `asset/matrixScreen.png`,
+    
+    iconURL: `asset/large.png`,
     description: formatMessage({
         id: 'DBitRotary.description',
-        default: '调节电压，基于高精度电位器'
+        default: '可调节电压，旋钮范围为0~1023'
     }),
     featured: true,
     blocks: 'blocks.js',
@@ -17,7 +17,7 @@ const matrixScreen = formatMessage => ({
     library: 'lib',
     official: true,
     tags: ['sensor'],
-    helpLink: 'https://delightmom.com'
+    
 });
 
 module.exports = matrixScreen;

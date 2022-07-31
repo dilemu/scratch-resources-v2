@@ -4,7 +4,7 @@ const max6675 = formatMessage => ({
         default: 'MAX6675 Module'
     }),
     extensionId: 'max6675',
-    version: '1.0.0',
+    
     supportDevice: ['arduinoUno', 'arduinoNano', 'arduinoMini', 'arduinoLeonardo',
         'arduinoMega2560', 'arduinoEsp32', 'arduinoEsp8266'],
     author: 'ArthurZheng',

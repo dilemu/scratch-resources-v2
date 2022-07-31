@@ -4,7 +4,7 @@ const sdCard = formatMessage => ({
         default: 'SD Card Module'
     }),
     extensionId: 'sdCard',
-    version: '1.0.0',
+    
     supportDevice: ['arduinoUno', 'arduinoNano', 'arduinoMini', 'arduinoLeonardo',
         'arduinoMega2560', 'arduinoEsp32', 'arduinoEsp8266'],
     author: 'ArthurZheng',

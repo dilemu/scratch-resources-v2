@@ -1,7 +1,7 @@
 const nrf24l01 = formatMessage => ({
     name: 'NRF24l01',
     extensionId: 'nrf24l01',
-    version: '1.0.0',
+    
     supportDevice: ['arduinoUno', 'arduinoNano', 'arduinoMini', 'arduinoLeonardo',
         'arduinoMega2560', 'arduinoEsp8266', 'arduinoEsp32'],
     author: 'ArthurZheng',

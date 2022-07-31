@@ -1,13 +1,13 @@
 const matrixScreen = formatMessage => ({
     name: "光敏传感器",
     extensionId: 'DBitLightSensor',
-    version: '1.0.0',
+    
     supportDevice: ['arduinoNano'],
-    author: 'bjppss',
-    iconURL: `asset/matrixScreen.png`,
+    
+    iconURL: `asset/large.png`,
     description: formatMessage({
         id: 'DBitLightSensor.description',
-        default: '精确测量环境光强度'
+        default: '可测量环境光强度'
     }),
     featured: true,
     blocks: 'blocks.js',
@@ -17,7 +17,7 @@ const matrixScreen = formatMessage => ({
     library: 'lib',
     official: true,
     tags: ['sensor'],
-    helpLink: 'https://delightmom.com'
+    
 });
 
 module.exports = matrixScreen;

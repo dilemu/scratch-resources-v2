@@ -1,13 +1,13 @@
 const matrixScreen = formatMessage => ({
     name: "避障传感器",
     extensionId: 'DBitObstacle',
-    version: '1.0.0',
+    
     supportDevice: ['arduinoNano'],
-    author: 'bjppss',
-    iconURL: `asset/matrixScreen.png`,
+    
+    iconURL: `asset/large.png`,
     description: formatMessage({
         id: 'DBitObstacle.description',
-        default: '按下输出高电平，松开输出低电平，有抖动'
+        default: '可用于数字和模拟侦测的红外避障模块'
     }),
     featured: true,
     blocks: 'blocks.js',
@@ -17,7 +17,7 @@ const matrixScreen = formatMessage => ({
     library: 'lib',
     official: true,
     tags: ['sensor'],
-    helpLink: 'https://delightmom.com'
+    
 });
 
 module.exports = matrixScreen;

@@ -1,7 +1,7 @@
 const ironKit = () => ({
     name: 'Iron Kit',
     extensionId: 'ironKit',
-    version: '1.0.0',
+    
     supportDevice: ['ironKit_arduinoUno'],
     author: 'ArthurZheng',
     hide: true,

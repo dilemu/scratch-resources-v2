@@ -4,15 +4,12 @@ const dht = formatMessage => ({
         default: 'DHT Sensor'
     }),
     extensionId: 'dht',
-    version: '1.0.0',
+    
     supportDevice: ['arduinoUno', 'arduinoNano', 'arduinoMini', 'arduinoLeonardo',
         'arduinoMega2560', 'arduinoEsp32', 'arduinoEsp8266'],
-    author: 'bjppss',
-    iconURL: `asset/dht.png`,
-    description: formatMessage({
-        id: 'dht.description',
-        default: 'DHT Temperature and humidity sensor module.'
-    }),
+    
+    iconURL: `asset/large.png`,
+    description: "可测量环境温度、湿度",
     featured: true,
     blocks: 'blocks.js',
     generator: 'generator.js',
@@ -21,7 +18,7 @@ const dht = formatMessage => ({
     library: 'lib',
     official: true,
     tags: ['sensor'],
-    helpLink: 'https://delightmom.com'
+    
 });
 
 module.exports = dht;

@@ -1,13 +1,13 @@
 const matrixScreen = formatMessage => ({
     name: "LED发光模块",
     extensionId: 'DBitLEDButton',
-    version: '1.0.0',
+    
     supportDevice: ['arduinoNano'],
-    author: 'bjppss',
-    iconURL: `asset/matrixScreen.png`,
+    
+    iconURL: `asset/large.png`,
     description: formatMessage({
         id: 'DBitLEDButton.description',
-        default: '高电平灯亮，低电平灯灭'
+        default: '按钮触发，LED高电平点亮'
     }),
     featured: true,
     blocks: 'blocks.js',
@@ -17,7 +17,7 @@ const matrixScreen = formatMessage => ({
     library: 'lib',
     official: true,
     tags: ['sensor'],
-    helpLink: 'https://delightmom.com'
+    
 });
 
 module.exports = matrixScreen;

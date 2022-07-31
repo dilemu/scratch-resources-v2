@@ -1,13 +1,13 @@
 const matrixScreen = formatMessage => ({
     name: "声音传感器",
     extensionId: 'DBitVoiceSensor',
-    version: '1.0.0',
+    
     supportDevice: ['arduinoNano'],
-    author: 'bjppss',
-    iconURL: `asset/matrixScreen.png`,
+    
+    iconURL: `asset/large.png`,
     description: formatMessage({
         id: 'DBitVoiceSensor.description',
-        default: '测量环境中的声音强度'
+        default: '测量环境中声音强度'
     }),
     featured: true,
     blocks: 'blocks.js',
@@ -17,7 +17,7 @@ const matrixScreen = formatMessage => ({
     library: 'lib',
     official: true,
     tags: ['sensor'],
-    helpLink: 'https://delightmom.com'
+    
 });
 
 module.exports = matrixScreen;

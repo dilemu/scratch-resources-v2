@@ -1,13 +1,13 @@
 const matrixScreen = formatMessage => ({
     name: "轴流式风扇",
     extensionId: 'DBitFanControl',
-    version: '1.0.0',
+    
     supportDevice: ['arduinoNano'],
-    author: 'bjppss',
-    iconURL: `asset/matrixScreen.png`,
+    
+    iconURL: `asset/large.png`,
     description: formatMessage({
         id: 'DBitFanControl.description',
-        default: '轴流式风扇'
+        default: '可控制速度和正反转的风扇'
     }),
     featured: true,
     blocks: 'blocks.js',
@@ -17,7 +17,7 @@ const matrixScreen = formatMessage => ({
     library: 'lib',
     official: true,
     tags: ['motion'],
-    helpLink: 'https://delightmom.com'
+    
 });
 
 module.exports = matrixScreen;

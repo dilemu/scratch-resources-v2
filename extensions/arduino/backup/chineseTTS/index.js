@@ -4,7 +4,7 @@ const chineseTTS = formatMessage => ({
         default: 'Chinese TTS'
     }),
     extensionId: 'chineseTTS',
-    version: '1.0.0',
+    
     supportDevice: ['arduinoUno', 'arduinoNano', 'arduinoMini', 'arduinoLeonardo',
         'arduinoMega2560', 'arduinoEsp32', 'arduinoEsp8266'],
     author: 'ArthurZheng',

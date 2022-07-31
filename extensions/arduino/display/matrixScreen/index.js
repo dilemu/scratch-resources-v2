@@ -1,13 +1,13 @@
 const matrixScreen = formatMessage => ({
     name: "点阵屏",
     extensionId: 'DBitMatrixScreen',
-    version: '1.0.0',
+    
     supportDevice: ['arduinoNano'],
-    author: 'bjppss',
-    iconURL: `asset/matrixScreen.png`,
+    
+    iconURL: `asset/large.png`,
     description: formatMessage({
         id: 'DBitMatrixScreen.description',
-        default: '8x8点阵屏，可以用来显示点阵图案'
+        default: '迷你点阵显示模块，IIC接口'
     }),
     featured: true,
     blocks: 'blocks.js',
@@ -17,7 +17,7 @@ const matrixScreen = formatMessage => ({
     library: 'lib',
     official: true,
     tags: ['display'],
-    helpLink: 'https://delightmom.com'
+    
 });
 
 module.exports = matrixScreen;

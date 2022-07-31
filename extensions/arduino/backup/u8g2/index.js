@@ -1,7 +1,7 @@
 const u8g2 = formatMessage => ({
     name: 'U8G2',
     extensionId: 'u8g2',
-    version: '1.0.0',
+    
     supportDevice: ['arduinoUno', 'arduinoNano', 'arduinoMini', 'arduinoLeonardo',
         'arduinoMega2560', 'arduinoEsp8266', 'arduinoEsp32'],
     author: 'ArthurZheng',

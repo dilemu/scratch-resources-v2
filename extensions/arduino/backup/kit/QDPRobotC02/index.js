@@ -1,7 +1,7 @@
 const QDPRobotC02 = () => ({
     name: 'QDPRobotC02',
     extensionId: 'QDPRobotC02',
-    version: '1.0.0',
+    
     supportDevice: ['QDPRobotC02_arduinoEsp32'],
     author: 'QDProbot',
     hide: true,

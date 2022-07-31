@@ -1,13 +1,13 @@
 const matrixScreen = formatMessage => ({
     name: "单按钮模块",
     extensionId: 'DBitSingleButton',
-    version: '1.0.0',
+    
     supportDevice: ['arduinoNano'],
-    author: 'bjppss',
-    iconURL: `asset/matrixScreen.png`,
+    
+    iconURL: `asset/large.png`,
     description: formatMessage({
         id: 'DBitSingleButton.description',
-        default: '按下输出高电平，松开输出低电平，有抖动'
+        default: '按下输出高电平，松开输出低电平'
     }),
     featured: true,
     blocks: 'blocks.js',
@@ -17,7 +17,7 @@ const matrixScreen = formatMessage => ({
     library: 'lib',
     official: true,
     tags: ['sensor'],
-    helpLink: 'https://delightmom.com'
+    
 });
 
 module.exports = matrixScreen;
