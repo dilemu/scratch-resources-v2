@@ -1,12 +1,14 @@
 module.exports = [
     // Buid-in device
-    'arduinoUno',
     'arduinoNano',
+    'zhiquban',
+    'zhangkongban',
+    'microbit',
+    'arduinoUno',
     'arduinoLeonardo',
     'arduinoMega2560',
     'arduinoEsp32',
     'arduinoEsp8266',
-    'microbit',
     'microbitV2',
     'makeyMakey',
     // Third party
