@@ -1,9 +1,7 @@
 const matrixScreen = formatMessage => ({
-    name: "LED发光模块",
+    name: "指示灯按钮",
     extensionId: 'DBitLEDButton',
-    
     supportDevice: ['arduinoNano'],
-    
     iconURL: `asset/large.png`,
     description: formatMessage({
         id: 'DBitLEDButton.description',
@@ -16,7 +14,7 @@ const matrixScreen = formatMessage => ({
     msg: 'msg.js',
     library: 'lib',
     official: true,
-    tags: ['sensor'],
+    tags: ['sensor', 'display'],
     
 });
 

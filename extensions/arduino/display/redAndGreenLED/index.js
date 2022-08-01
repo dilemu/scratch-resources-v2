@@ -1,13 +1,11 @@
 const matrixScreen = formatMessage => ({
-    name: "全彩彩灯块",
-    extensionId: 'DBitRGBLED',
-    
+    name: "红绿双色灯",
+    extensionId: 'DBitRedAndFGreenLED',
     supportDevice: ['arduinoNano'],
-    
     iconURL: `asset/large.png`,
     description: formatMessage({
-        id: 'DBitRGBLED.description',
-        default: 'WS2812 RGB灯（1~10灯珠皆可）'
+        id: 'DBitRedAndFGreenLED.description',
+        default: '可控制单路点亮和双路点亮的双色LED'
     }),
     featured: true,
     blocks: 'blocks.js',
