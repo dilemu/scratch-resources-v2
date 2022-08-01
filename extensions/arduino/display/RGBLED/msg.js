@@ -13,7 +13,7 @@ function addMsg (Blockly) {
 
     Object.assign(Blockly.ScratchMsgs.locales["zh-cn"],
         {
-            DBitRGBLED_CATEGORY: "全彩灯"
+            DBITRGBLED_CATEGORY: "全彩灯"
         }
     );
 
