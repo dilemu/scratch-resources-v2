@@ -13,7 +13,7 @@ function addMsg (Blockly) {
 
     Object.assign(Blockly.ScratchMsgs.locales["zh-cn"],
         {
-            DBitFANCONTROL_CATEGORY: "轴流式风扇"
+            DBITFANCONTROL_CATEGORY: "轴流式风扇"
         }
     );
 

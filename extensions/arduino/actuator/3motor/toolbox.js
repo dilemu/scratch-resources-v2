@@ -11,7 +11,7 @@ function addToolbox () {
                 <field name="NUM">100</field>
             </shadow>
         </value>
-        <field name="DIRECTION">5</field>
+        <field name="DIRECTION">0</field>
     </block>
 </category>`;
 }

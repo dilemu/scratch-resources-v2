@@ -1,5 +1,5 @@
 const matrixScreen = formatMessage => ({
-    name: "雨滴传感器",
+    name: "水分传感器",
     extensionId: 'DBitRaindrop',
     
     supportDevice: ['arduinoNano'],

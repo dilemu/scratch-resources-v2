@@ -3,7 +3,7 @@
 /* eslint-disable require-jsdoc */
 function addToolbox () {
     return `
-<category name="%{轴流式风扇}" id="DBitFANCONTROL_CATEGORY" colour="#BBBB00" secondaryColour="#888800">
+<category name="%{BKY_DBITFANCONTROL_CATEGORY}" id="DBITFANCONTROL_CATEGORY" colour="#BBBB00" secondaryColour="#888800">
     <block type="DBitFanControl_start" id="DBitFanControl_start">
         <field name="PIN">5-6</field>
         <field name="DIRECTION">1</field>

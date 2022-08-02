@@ -1,5 +1,5 @@
 const matrixScreen = formatMessage => ({
-    name: "全彩彩灯块",
+    name: "全彩灯模块",
     extensionId: 'DBitRGBLED',
     
     supportDevice: ['arduinoNano'],

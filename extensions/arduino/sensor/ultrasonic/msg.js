@@ -16,7 +16,7 @@ function addMsg (Blockly) {
 
     Object.assign(Blockly.ScratchMsgs.locales["zh-cn"],
         {
-            "ULTRASONIC_CATEGORY": "超声波",
+            "ULTRASONIC_CATEGORY": "超声波传感器",
             "ULTRASONIC_READ_DISTANCE": "超声波传感器引脚 TRIG %1 ECHO %2 读取距离 %3"
         }
     );
