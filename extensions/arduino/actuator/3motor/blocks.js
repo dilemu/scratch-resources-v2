@@ -5,8 +5,8 @@ function addBlocks (Blockly) {
     const colour = '#BBBB00';
     const secondaryColour = '#888800';
     const digitalPins = [
-        ["5-6", "5-6"],
-        ["10-11", "10-11"],
+        ["D5-D6", "5-6"],
+        ["D10-D11", "10-11"],
     ]
 
     const direction = [
