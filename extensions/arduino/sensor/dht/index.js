@@ -4,7 +4,7 @@ const dht = formatMessage => ({
         default: 'DHT Sensor'
     }),
     extensionId: 'dht',
-    
+    insetIconURL: `asset/small.png`,
     supportDevice: ['arduinoUno', 'arduinoNano', 'arduinoMini', 'arduinoLeonardo',
         'arduinoMega2560', 'arduinoEsp32', 'arduinoEsp8266'],
     

@@ -8,7 +8,7 @@ function addToolbox () {
         <field name="PIN">A0-A1</field>
         <value name="TEXT">
             <shadow type="text">
-                <field name="TEXT">DBit</field>
+                <field name="TEXT">1024</field>
             </shadow>
         </value>
     </block>

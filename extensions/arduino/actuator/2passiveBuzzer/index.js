@@ -6,7 +6,7 @@ const passiveBuzzer = formatMessage => ({
     extensionId: 'DBitPassiveBuzzer',
     
     supportDevice: ['arduinoNano'],
-    
+    insetIconURL: `asset/small.png`,
     iconURL: `asset/large.png`,
     description: formatMessage({
         id: 'DBitPassiveBuzzer.description',

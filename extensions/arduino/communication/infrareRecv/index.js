@@ -2,6 +2,7 @@ const matrixScreen = formatMessage => ({
     name: "红外线接收模块",
     extensionId: 'DBitInfrareRecv',
     supportDevice: ['arduinoNano'],
+    insetIconURL: `asset/small.png`,
     iconURL: `asset/large.png`,
     description: formatMessage({
         id: 'DBitInfrareRecv.description',

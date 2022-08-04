@@ -22,8 +22,8 @@ function addBlocks (Blockly) {
         ["灭红灯", "2"],
         ["亮绿灯", "3"],
         ["灭绿灯", "4"],
-        ["亮黄灯", "5"],
-        ["灭黄灯", "6"],
+        ["全亮", "5"],
+        ["全灭", "6"],
     ]
 
     Blockly.Blocks.DBitRedAndFGreenLED_light = {

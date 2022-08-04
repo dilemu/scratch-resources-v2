@@ -2,6 +2,7 @@ const matrixScreen = formatMessage => ({
     name: "红绿双色灯",
     extensionId: 'DBitRedAndFGreenLED',
     supportDevice: ['arduinoNano'],
+    insetIconURL: `asset/small.png`,
     iconURL: `asset/large.png`,
     description: formatMessage({
         id: 'DBitRedAndFGreenLED.description',

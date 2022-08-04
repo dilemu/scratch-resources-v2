@@ -3,7 +3,7 @@ const matrixScreen = formatMessage => ({
     extensionId: 'DBitTouch',
     
     supportDevice: ['arduinoNano'],
-    
+    insetIconURL: `asset/small.png`,
     iconURL: `asset/large.png`,
     description: formatMessage({
         id: 'DBitTouch.description',

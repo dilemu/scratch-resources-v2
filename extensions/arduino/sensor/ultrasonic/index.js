@@ -6,7 +6,7 @@ const ultrasonic = formatMessage => ({
     extensionId: 'ultrasonic',
     
     supportDevice: ['arduinoNano'],
-    
+    insetIconURL: `asset/small.png`,
     iconURL: `asset/large.png`,
     description: formatMessage({
         id: 'DBitUltrasonic.description',

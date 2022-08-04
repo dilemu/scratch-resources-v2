@@ -6,7 +6,7 @@ const fourDigitClockDisplay = formatMessage => ({
     extensionId: 'DBitFourDigitClockDisplay',
     
     supportDevice: ['arduinoNano'],
-    
+    insetIconURL: `asset/small.png`,
     iconURL: `asset/large.png`,
     description: formatMessage({
         id: 'DBitFourDigitClockDisplay.description',

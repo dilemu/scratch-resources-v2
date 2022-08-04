@@ -5,6 +5,7 @@ const matrixScreen = formatMessage => ({
     supportDevice: ['arduinoNano'],
     
     iconURL: `asset/large.png`,
+    insetIconURL: `asset/small.png`,
     description: formatMessage({
         id: 'DBitFanControl.description',
         default: '可控制速度和正反转的风扇'
