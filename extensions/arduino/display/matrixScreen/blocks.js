@@ -2,7 +2,7 @@
 /* eslint-disable max-len */
 /* eslint-disable require-jsdoc */
 function addBlocks (Blockly) {
-    const colour = '#BBBB00';
+    const colour = '#32C850';
     const secondaryColour = '#888800';
     const digitalPins = [
         ["A0-A1", "A0-A1"],
@@ -16,14 +16,14 @@ function addBlocks (Blockly) {
         ["D12-D13", "12-13"]
     ]
     const coordinates = [
-        ["1", 1],
-        ["2", 2],
-        ["3", 3],
-        ["4", 4],
-        ["5", 5],
-        ["6", 6],
-        ["7", 7],
-        ["8", 8]
+        ["1", "1"],
+        ["2", "2"],
+        ["3", "3"],
+        ["4", "4"],
+        ["5", "5"],
+        ["6", "6"],
+        ["7", "7"],
+        ["8", "8"]
     ]
 
     Blockly.Blocks.matrixScreen_showText = {
@@ -109,8 +109,8 @@ function addBlocks (Blockly) {
                         type: "field_dropdown",
                         name: "STATE",
                         options: [
-                            ["亮", 1],
-                            ["灭", 0]
+                            ["亮", "1"],
+                            ["灭", "0"]
                         ]
                     }
                 ],

@@ -2,7 +2,7 @@
 /* eslint-disable max-len */
 /* eslint-disable require-jsdoc */
 function addBlocks (Blockly) {
-    const colour = '#BBBB00';
+    const colour = '#00AAFF';
     const secondaryColour = '#888800';
     const digitalPins = [
         ["D5-D6", "5-6"],

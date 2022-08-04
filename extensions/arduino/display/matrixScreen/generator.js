@@ -37,9 +37,9 @@ function addGenerator (Blockly) {
     Blockly.Arduino.matrixScreen_setPixel = function (block) {
         const pinList = block.getFieldValue('PIN');
         const [a,b] = pinList.split('-');
-        const x = Blockly.Arduino.valueToCode(block, 'X', Blockly.Arduino.ORDER_ATOMIC);
-        const y = Blockly.Arduino.valueToCode(block, 'Y', Blockly.Arduino.ORDER_ATOMIC);
-        const state = Blockly.Arduino.valueToCode(block, 'STATE', Blockly.Arduino.ORDER_ATOMIC);
+        const x = block.getFieldValue('X');
+        const y = block.getFieldValue('Y');
+        const state = block.getFieldValue('STATE');
         Blockly.Arduino.includes_.fullIncludes = `#include <Matrix.h>`;
         Blockly.Arduino.definitions_[`matrix_${a}`] = `Matrix matrix_${a}(${a},${b});`;
         Blockly.Arduino.setups_[`matrix_${a}`] = `matrix_${a}.begin(0x70);`;
