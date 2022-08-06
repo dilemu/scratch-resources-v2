@@ -10,7 +10,7 @@ function addGenerator (Blockly) {
         Blockly.Arduino.includes_.DBitFourDigitClockDisplay = `#include <TM1650.h>`;
         Blockly.Arduino.definitions_[deviceName] = `TM1650 ${deviceName}(${a}, ${b});`;
         Blockly.Arduino.setups_[deviceName] = `${deviceName}.init();`;
-        const code = `${deviceName}.displayString(String("") + ${text});\n`;
+        const code = `${deviceName}.displayString(${text});\n`;
         return code;
     };
 

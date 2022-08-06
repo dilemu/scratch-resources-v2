@@ -8,7 +8,7 @@ function addGenerator (Blockly) {
         Blockly.Arduino.includes_.ultrasonic_readDistance = `#include <Ultrasonic.h>`;
         Blockly.Arduino.definitions_[`ultrasonic_readDistance_${a}_${b}`] =
             `Ultrasonic ultrasonic_${a}_${b}(${a}, ${b});`;
-        return [`ultrasonic_${a}_${b}.read(CM)`, Blockly.Arduino.ORDER_ATOMIC];
+        return [`String("") + ultrasonic_${a}_${b}.read(CM)`, Blockly.Arduino.ORDER_ATOMIC];
     };
 
 
