@@ -18,15 +18,15 @@ function addBlocks (Blockly) {
     ]
 
     const dotIndexList = [
-        ["1", 0],
-        ["2", 1],
-        ["3", 2],
-        ["4", 3],
+        ["1", "0"],
+        ["2", "1"],
+        ["3", "2"],
+        ["4", "3"],
     ]
 
     const dotState = [
-        ["亮", true],
-        ["暗", false],
+        ["亮", "true"],
+        ["暗", "false"],
     ]
 
     const controlList = [
