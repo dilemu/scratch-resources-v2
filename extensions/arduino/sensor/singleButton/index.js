@@ -1,7 +1,6 @@
 const matrixScreen = formatMessage => ({
     name: "单按钮模块",
     extensionId: 'DBitSingleButton',
-    
     supportDevice: ['arduinoNano'],
     insetIconURL: `asset/small.png`,
     iconURL: `asset/large.png`,
@@ -10,6 +9,7 @@ const matrixScreen = formatMessage => ({
         default: '按下输出高电平，松开输出低电平'
     }),
     featured: true,
+    learnMore: 'https://delightmom.feishu.cn/wiki/wikcnhqwqhoCmU63nBBztYpCI1f',
     blocks: 'blocks.js',
     generator: 'generator.js',
     toolbox: 'toolbox.js',

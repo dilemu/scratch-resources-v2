@@ -10,6 +10,7 @@ const matrixScreen = formatMessage => ({
         default: '可用于数字和模拟侦测的红外避障模块'
     }),
     featured: true,
+    learnMore: 'https://delightmom.feishu.cn/wiki/wikcnXsO2K9S5yXKXtMyxkW46Gd',
     blocks: 'blocks.js',
     generator: 'generator.js',
     toolbox: 'toolbox.js',

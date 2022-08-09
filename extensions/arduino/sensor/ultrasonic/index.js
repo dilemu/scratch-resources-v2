@@ -4,7 +4,6 @@ const ultrasonic = formatMessage => ({
         default: '超声波传感器'
     }),
     extensionId: 'ultrasonic',
-    
     supportDevice: ['arduinoNano'],
     insetIconURL: `asset/small.png`,
     iconURL: `asset/large.png`,
@@ -13,6 +12,7 @@ const ultrasonic = formatMessage => ({
         default: '模拟双探头超声波测距'
     }),
     featured: true,
+    learnMore: 'https://delightmom.feishu.cn/wiki/wikcnVehVOEfQY5piSN6wYD2xBg',
     blocks: 'blocks.js',
     generator: 'generator.js',
     toolbox: 'toolbox.js',
@@ -20,7 +20,6 @@ const ultrasonic = formatMessage => ({
     library: 'lib',
     official: true,
     tags: ['sensor'],
-    
 });
 
 module.exports = ultrasonic;

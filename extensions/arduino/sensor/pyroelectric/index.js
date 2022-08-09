@@ -1,7 +1,6 @@
 const matrixScreen = formatMessage => ({
     name: "热释电运动传感器",
     extensionId: 'DBitPyroelectric',
-    
     supportDevice: ['arduinoNano'],
     insetIconURL: `asset/small.png`,
     iconURL: `asset/large.png`,
@@ -10,6 +9,7 @@ const matrixScreen = formatMessage => ({
         default: '检测运动的人、动物发出的热红外线'
     }),
     featured: true,
+    learnMore: 'https://delightmom.feishu.cn/wiki/wikcnzFYMlr3OheD5SOwt4WTQIC',
     blocks: 'blocks.js',
     generator: 'generator.js',
     toolbox: 'toolbox.js',
@@ -17,7 +17,6 @@ const matrixScreen = formatMessage => ({
     library: 'lib',
     official: true,
     tags: ['sensor'],
-    
 });
 
 module.exports = matrixScreen;

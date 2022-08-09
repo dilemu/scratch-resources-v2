@@ -19,7 +19,7 @@ function addBlocks (Blockly) {
     Blockly.Blocks.DBitLightSensor_read = {
         init: function () {
             this.jsonInit({
-                message0: "读取引脚 %1 环境光",
+                message0: "读取 %1 的环境光",
                 args0: [
                     {
                         type: "field_dropdown",

@@ -209,9 +209,9 @@ void TM1650::displayString(float value)
 	if (!iActive) return;
 	String aString = String("") + value;
 	aString = aString + "_";
-	aString.replace("000_", "");
-	aString.replace("00_", "");
-	aString.replace("0_", "");
+	aString.replace(".000_", "");
+	aString.replace(".00_", "");
+	aString.replace(".0_", "");
 	unsigned int slen = aString.length();
 
 	for (int i = 0; i < 4 - slen; i++)

@@ -3,8 +3,6 @@
 /* eslint-disable require-jsdoc */
 function addBlocks (Blockly) {
     const color = '#A66EFF';
-    const secondaryColour = '#BA55D3';
-
     const digitalPins = [
         ["A0-A1", "A0-A1"],
         ["A2-A3", "A2-A3"],
@@ -20,7 +18,7 @@ function addBlocks (Blockly) {
     Blockly.Blocks.ultrasonic_readDistance = {
         init: function () {
             this.jsonInit({
-                message0: '读取 超声波传感器 管脚 %1 的测距值(CM)',
+                message0: '读取 %1 的超声波测距值(cm)',
                 args0: [
                     {
                         type: 'field_dropdown',
@@ -29,7 +27,6 @@ function addBlocks (Blockly) {
                     }
                 ],
                 colour: color,
-                secondaryColour: secondaryColour,
                 extensions: ['output_number']
             });
         }

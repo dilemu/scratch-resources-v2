@@ -19,7 +19,7 @@ function addBlocks (Blockly) {
     Blockly.Blocks.DBitTouch_boolean = {
         init: function () {
             this.jsonInit({
-                message0: "引脚 %1 检测到触摸？",
+                message0: "触摸传感器 %1 检测到被触摸？",
                 args0: [
                     {
                         type: "field_dropdown",

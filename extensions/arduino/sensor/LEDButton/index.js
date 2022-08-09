@@ -9,6 +9,7 @@ const matrixScreen = formatMessage => ({
         default: '按钮触发，LED高电平点亮'
     }),
     featured: true,
+    learnMore: "https://delightmom.feishu.cn/wiki/wikcnf4TqFnl7jfI8e8reaXXMmd",
     blocks: 'blocks.js',
     generator: 'generator.js',
     toolbox: 'toolbox.js',

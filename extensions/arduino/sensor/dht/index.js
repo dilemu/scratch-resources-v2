@@ -7,7 +7,7 @@ const dht = formatMessage => ({
     insetIconURL: `asset/small.png`,
     supportDevice: ['arduinoUno', 'arduinoNano', 'arduinoMini', 'arduinoLeonardo',
         'arduinoMega2560', 'arduinoEsp32', 'arduinoEsp8266'],
-    
+    learnMore: 'https://delightmom.feishu.cn/wiki/wikcnVCDjeL2JI908g1kR6bYO7e',
     iconURL: `asset/large.png`,
     description: "可测量环境温度、湿度",
     featured: true,

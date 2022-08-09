@@ -1,7 +1,6 @@
 const matrixScreen = formatMessage => ({
     name: "水分传感器",
     extensionId: 'DBitRaindrop',
-    
     supportDevice: ['arduinoNano'],
     insetIconURL: `asset/small.png`,
     iconURL: `asset/large.png`,
@@ -10,6 +9,7 @@ const matrixScreen = formatMessage => ({
         default: '可检测雨水、雾水、水汽'
     }),
     featured: true,
+    learnMore: 'https://delightmom.feishu.cn/wiki/wikcnhvvgLxdddNOFgnXy67DRRc',
     blocks: 'blocks.js',
     generator: 'generator.js',
     toolbox: 'toolbox.js',
@@ -17,7 +17,6 @@ const matrixScreen = formatMessage => ({
     library: 'lib',
     official: true,
     tags: ['sensor'],
-    
 });
 
 module.exports = matrixScreen;

@@ -19,7 +19,7 @@ function addBlocks (Blockly) {
     Blockly.Blocks.DBitPyroelectric_boolean = {
         init: function () {
             this.jsonInit({
-                message0: "读取引脚 %1 人体红外热释电运动传感器",
+                message0: "热释电传感器 %1 检测到人/动物运动？",
                 args0: [
                     {
                         type: "field_dropdown",

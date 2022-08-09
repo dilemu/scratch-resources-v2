@@ -24,7 +24,7 @@ function addBlocks (Blockly) {
     Blockly.Blocks.DBitLEDButton_light = {
         init: function () {
             this.jsonInit({
-                message0: "%1 %2 的LED",
+                message0: "%1 %2 的按钮指示灯",
                 args0: [
                     {
                         type: "field_dropdown",
@@ -46,7 +46,7 @@ function addBlocks (Blockly) {
     Blockly.Blocks.DBitLEDButton_button = {
         init: function () {
             this.jsonInit({
-                message0: '引脚 %1 按钮被按下？',
+                message0: '按键 %1 检测到被按下？',
                 args0: [
                     {
                         type: "field_dropdown",

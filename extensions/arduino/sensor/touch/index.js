@@ -1,7 +1,6 @@
 const matrixScreen = formatMessage => ({
     name: "触摸传感器",
     extensionId: 'DBitTouch',
-    
     supportDevice: ['arduinoNano'],
     insetIconURL: `asset/small.png`,
     iconURL: `asset/large.png`,
@@ -10,6 +9,7 @@ const matrixScreen = formatMessage => ({
         default: '触摸开关、可感应人体、金属'
     }),
     featured: true,
+    learnMore: 'https://delightmom.feishu.cn/wiki/wikcnRtdkEpMgBZAF4OZnXd5hgd',
     blocks: 'blocks.js',
     generator: 'generator.js',
     toolbox: 'toolbox.js',
@@ -17,7 +17,6 @@ const matrixScreen = formatMessage => ({
     library: 'lib',
     official: true,
     tags: ['sensor'],
-    
 });
 
 module.exports = matrixScreen;
