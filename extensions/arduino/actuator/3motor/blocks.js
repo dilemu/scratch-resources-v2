@@ -17,7 +17,7 @@ function addBlocks (Blockly) {
     Blockly.Blocks.DBitMotor_drive = {
         init: function () {
             this.jsonInit({
-                message0: "电机 %1 以 %2 的速度 %3",
+                message0: "设置 %1 的 电机 %2 转速 %3",
                 args0: [
                     {
                         type: "field_dropdown",
@@ -25,13 +25,13 @@ function addBlocks (Blockly) {
                         options: digitalPins
                     },
                     {
-                        type: "input_value",
-                        name: "SPEED"
-                    },
-                    {
                         type: "field_dropdown",
                         name: "DIRECTION",
                         options: direction
+                    },
+                    {
+                        type: "input_value",
+                        name: "SPEED"
                     }
                 ],
                 colour: colour,

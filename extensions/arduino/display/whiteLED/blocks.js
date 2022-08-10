@@ -44,7 +44,7 @@ function addBlocks (Blockly) {
     Blockly.Blocks.DBitWhiteLED_light = {
         init: function () {
             this.jsonInit({
-                message0: "%1 引脚 %2 LED",
+                message0: "%1 %2 的纯白单色灯",
                 args0: [
                     {
                         type: "field_dropdown",
@@ -54,7 +54,7 @@ function addBlocks (Blockly) {
                     {
                         type: "field_dropdown",
                         name: "PIN",
-                        options: fullDigitalPins
+                        options: digitalPins
                     }
                 ],
                 colour: colour,

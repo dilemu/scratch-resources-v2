@@ -19,7 +19,7 @@ function addBlocks (Blockly) {
     Blockly.Blocks.DBitServo_drive = {
         init: function () {
             this.jsonInit({
-                message0: "设置 %1 引脚伺服舵机为 %2 度",
+                message0: "设置 %1 的 舵机为 %2 度",
                 args0: [
                     {
                         type: 'field_dropdown',

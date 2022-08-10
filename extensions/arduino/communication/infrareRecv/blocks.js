@@ -28,7 +28,7 @@ function addBlocks (Blockly) {
     Blockly.Blocks.DBitInfrareRecv_read = {
         init: function () {
             this.jsonInit({
-                message0: "读取引脚 %1 红外接收值",
+                message0: "读取引 %1 的红外接收值",
                 args0: [
                     {
                         type: "field_dropdown",
@@ -45,7 +45,7 @@ function addBlocks (Blockly) {
     Blockly.Blocks.DBitInfrareRecv_detect = {
         init: function () {
             this.jsonInit({
-                message0: "红外遥控器 管脚 %1 按键 %2 被按下",
+                message0: "红外接收模块 %1 检测到 %2 按键被按下？",
                 args0: [
                     {
                         type: "field_dropdown",

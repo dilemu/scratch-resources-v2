@@ -1,7 +1,6 @@
 const matrixScreen = formatMessage => ({
     name: "点阵屏",
     extensionId: 'DBitMatrixScreen',
-    
     supportDevice: ['arduinoNano'],
     insetIconURL: `asset/small.png`,
     iconURL: `asset/large.png`,
@@ -10,6 +9,7 @@ const matrixScreen = formatMessage => ({
         default: '迷你点阵显示模块，IIC接口'
     }),
     featured: true,
+    learnMore: 'https://delightmom.feishu.cn/wiki/wikcnwoSasLD0h1zpR3RWwlSKYc',
     blocks: 'blocks.js',
     generator: 'generator.js',
     toolbox: 'toolbox.js',

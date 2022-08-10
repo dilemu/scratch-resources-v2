@@ -9,6 +9,7 @@ const matrixScreen = formatMessage => ({
         default: '可接收标准38KHz调制的红外信号'
     }),
     featured: true,
+    learnMore: 'https://delightmom.feishu.cn/wiki/wikcnCi6VaS599WYCfca2sf9Bcf',
     blocks: 'blocks.js',
     generator: 'generator.js',
     toolbox: 'toolbox.js',

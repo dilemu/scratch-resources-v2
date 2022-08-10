@@ -1,7 +1,6 @@
 const matrixScreen = formatMessage => ({
-    name: "电机驱动模块",
+    name: "乐高兼容电机",
     extensionId: 'DBitMotor',
-    
     supportDevice: ['arduinoNano'],
     insetIconURL: `asset/small.png`,
     iconURL: `asset/large.png`,
@@ -10,6 +9,7 @@ const matrixScreen = formatMessage => ({
         default: '可控制正反转和调速的电机'
     }),
     featured: true,
+    learnMore: 'https://delightmom.feishu.cn/wiki/wikcnlp8DdF70HOdtmzgmbsPBvg',
     blocks: 'blocks.js',
     generator: 'generator.js',
     toolbox: 'toolbox.js',
@@ -17,7 +17,6 @@ const matrixScreen = formatMessage => ({
     library: 'lib',
     official: true,
     tags: ['motion'],
-    
 });
 
 module.exports = matrixScreen;

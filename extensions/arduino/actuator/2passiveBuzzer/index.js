@@ -4,7 +4,6 @@ const passiveBuzzer = formatMessage => ({
         default: '无源蜂鸣器'
     }),
     extensionId: 'DBitPassiveBuzzer',
-    
     supportDevice: ['arduinoNano'],
     insetIconURL: `asset/small.png`,
     iconURL: `asset/large.png`,
@@ -13,6 +12,7 @@ const passiveBuzzer = formatMessage => ({
         default: '可通过音调和节拍控制无源声音输出；可通过频率和使劲按控制有源声音输出'
     }),
     featured: true,
+    learnMore: 'https://delightmom.feishu.cn/wiki/wikcnIrDbtnK2p7hGzTswiDL5sg',
     blocks: 'blocks.js',
     generator: 'generator.js',
     toolbox: 'toolbox.js',

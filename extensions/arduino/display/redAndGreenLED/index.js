@@ -9,6 +9,7 @@ const matrixScreen = formatMessage => ({
         default: '可控制单路点亮和双路点亮的双色LED'
     }),
     featured: true,
+    learnMore: 'https://delightmom.feishu.cn/wiki/wikcnp5dOegxSi7TFVoOtzTJwaf',
     blocks: 'blocks.js',
     generator: 'generator.js',
     toolbox: 'toolbox.js',
@@ -16,7 +17,6 @@ const matrixScreen = formatMessage => ({
     library: 'lib',
     official: true,
     tags: ['display'],
-    
 });
 
 module.exports = matrixScreen;

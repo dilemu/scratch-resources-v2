@@ -26,7 +26,7 @@ function addGenerator (Blockly) {
     Blockly.Arduino.matrixScreen_rotate = function (block) {
         const pinList = block.getFieldValue('PIN');
         const [a,b] = pinList.split('-');
-        const degree = Blockly.Arduino.valueToCode(block, 'DEGREE', Blockly.Arduino.ORDER_ATOMIC);
+        const degree = block.getFieldValue('DEGREE');
         Blockly.Arduino.includes_.fullIncludes = `#include <Matrix.h>`;
         Blockly.Arduino.definitions_[`matrix_${a}`] = `Matrix matrix_${a}(${a},${b});`;
         Blockly.Arduino.setups_[`matrix_${a}`] = `matrix_${a}.begin(0x70);`;

@@ -16,6 +16,12 @@ function addBlocks (Blockly) {
         ["D10-D11", "10-11"],
         ["D12-D13", "12-13"]
     ]
+    const angleList = [
+        ["↑", "0"],
+        ["↓", "180"],
+        ["←", "270"],
+        ["→", "90"]
+    ]
     const coordinates = [
         ["1", "1"],
         ["2", "2"],
@@ -30,7 +36,7 @@ function addBlocks (Blockly) {
     Blockly.Blocks.matrixScreen_showText = {
         init: function () {
             this.jsonInit({
-                message0: "设置 点阵屏 管脚 %1 显示 %2",
+                message0: "设置 %1 的 点阵屏 显示 %2",
                 args0: [
                     {
                         type: "field_dropdown",
@@ -51,7 +57,7 @@ function addBlocks (Blockly) {
     Blockly.Blocks.matrixScreen_clear = {
         init: function () {
             this.jsonInit({
-                message0: "设置 点阵屏 管脚 %1 清屏",
+                message0: "设置 %1 的 点阵屏 清屏",
                 args0: [
                     {
                         type: "field_dropdown",
@@ -68,7 +74,7 @@ function addBlocks (Blockly) {
     Blockly.Blocks.matrixScreen_rotate = {
         init: function () {
             this.jsonInit({
-                message0: "设置 点阵屏 管脚 %1 屏幕旋转 %2",
+                message0: "设置 %1 的 点阵屏 屏幕旋转 %2",
                 args0: [
                     {
                         type: "field_dropdown",
@@ -76,8 +82,9 @@ function addBlocks (Blockly) {
                         options: digitalPins
                     },
                     {
-                        type: "input_value",
-                        name: "DEGREE"
+                        type: "field_dropdown",
+                        name: "DEGREE",
+                        options: angleList
                     }
                 ],
                 colour: colour,

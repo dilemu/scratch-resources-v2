@@ -13,7 +13,7 @@ function addBlocks (Blockly) {
         ["D2-D3", "2-3"],
         ["D5-D6", "5-6"],
         ["D4-D7", "4-7"],
-["D8-D9", "8-9"],
+    ["D8-D9", "8-9"],
         ["D10-D11", "10-11"],
         ["D12-D13", "12-13"]
     ]
@@ -27,19 +27,19 @@ function addBlocks (Blockly) {
 
     const dotState = [
         ["亮", "true"],
-        ["暗", "false"],
+        ["灭", "false"],
     ]
 
     const controlList = [
-        ["开", "displayOn"],
-        ["关", "displayOff"],
+        ["打开", "displayOn"],
+        ["关闭", "displayOff"],
         ["清屏", "clear"]
     ]
 
     Blockly.Blocks.DBitFourDigitClockDisplay_showText = {
         init: function () {
             this.jsonInit({
-                message0: "设置 数码管 管脚 %1 显示 %2",
+                message0: "设置 %1 的数码管 显示 %2",
                 args0: [
                     {
                         type: "field_dropdown",
@@ -60,7 +60,7 @@ function addBlocks (Blockly) {
     Blockly.Blocks.DBitFourDigitClockDisplay_showDot = {
         init: function () {
             this.jsonInit({
-                message0: "设置 数码管 管脚 %1 第 %2 个小数点 %3",
+                message0: "设置 %1 的 数码管 第 %2 个小数点 %3",
                 args0: [
                     {
                         type: "field_dropdown",
@@ -87,7 +87,7 @@ function addBlocks (Blockly) {
     Blockly.Blocks.DBitFourDigitClockDisplay_control = {
         init: function () {
             this.jsonInit({
-                message0: "设置 数码管 管脚 %1 的 %2",
+                message0: "设置 %1 的 数码管 %2",
                 args0: [
                     {
                         type: "field_dropdown",

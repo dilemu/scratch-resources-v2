@@ -69,7 +69,7 @@ function addBlocks (Blockly) {
     Blockly.Blocks.passiveBuzzer_toneSetPlay = {
         init: function () {
             this.jsonInit({
-                message0: "播放 蜂鸣器 %1 音调为 %2 节拍为 %3",
+                message0: "播放 %1 的蜂鸣器 音调 %2 节拍 %3",
                 args0: [
                     {
                         type: "field_dropdown",
@@ -96,7 +96,7 @@ function addBlocks (Blockly) {
     Blockly.Blocks.passiveBuzzer_toneNormalPlay = {
         init: function () {
             this.jsonInit({
-                message0: "播放管脚 %1 蜂鸣器 频率为 %2 时间为 %3 ms",
+                message0: "播放 %1 的蜂鸣器 频率 %2 时间 %3 ms",
                 args0: [
                     {
                         type: "field_dropdown",

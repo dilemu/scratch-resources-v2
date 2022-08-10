@@ -1,10 +1,9 @@
 const fourDigitClockDisplay = formatMessage => ({
     name: formatMessage({
         id: 'DBitFourDigitClockDisplay.name',
-        default: '四位数码管'
+        default: '四位时钟数码管'
     }),
     extensionId: 'DBitFourDigitClockDisplay',
-    
     supportDevice: ['arduinoNano'],
     insetIconURL: `asset/small.png`,
     iconURL: `asset/large.png`,
@@ -13,6 +12,7 @@ const fourDigitClockDisplay = formatMessage => ({
         default: '显示模块，IIC接口'
     }),
     featured: true,
+    learnMore: 'https://delightmom.feishu.cn/wiki/wikcnslxL3crkE1Y1w4NfeVko4P',
     blocks: 'blocks.js',
     generator: 'generator.js',
     toolbox: 'toolbox.js',
@@ -20,7 +20,6 @@ const fourDigitClockDisplay = formatMessage => ({
     library: 'lib',
     official: true,
     tags: ['display'],
-    
 });
 
 module.exports = fourDigitClockDisplay;

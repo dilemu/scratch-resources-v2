@@ -27,7 +27,7 @@ function addBlocks (Blockly) {
     Blockly.Blocks.DBitRGBLED_display = {
         init: function () {
             this.jsonInit({
-                message0: "设置 全彩灯 管脚 %1 %2 灯 颜色为 R %3 G %4 B %5",
+                message0: "设置 %1的 全彩灯 %2 灯 颜色为 R %3 G %4 B %5",
                 args0: [
                     {
                         type: "field_dropdown",

@@ -10,14 +10,14 @@ function addBlocks (Blockly) {
     ]
 
     const directionList = [
-        ["顺时针", 1],
-        ["逆时针", 2]
+        ["正转", 1],
+        ["反转", 2]
     ]
 
     Blockly.Blocks.DBitFanControl_start = {
         init: function () {
             this.jsonInit({
-                message0: "设置 风扇 管脚 %1 的方向为 %2 转速为 %3",
+                message0: "设置 %1 的风扇 %2 转速 %3",
                 args0: [
                     {
                         type: "field_dropdown",
