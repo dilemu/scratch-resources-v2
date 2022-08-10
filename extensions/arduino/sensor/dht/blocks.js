@@ -9,10 +9,11 @@ function addBlocks(Blockly) {
         ["A0-A1", "A0-A1"],
         ["A2-A3", "A2-A3"],
         ["A4-A5", "A4-A5"],
-        ["D0-D1", "0-1"],
+        
         ["D2-D3", "2-3"],
         ["D5-D6", "5-6"],
         ["D4-D7", "4-7"],
+["D8-D9", "8-9"],
         ["D10-D11", "10-11"],
         ["D12-D13", "12-13"]
     ]
@@ -24,7 +25,7 @@ function addBlocks(Blockly) {
     Blockly.Blocks.dht_read = {
         init: function () {
             this.jsonInit({
-                message0: "读取 管脚 %1 的 %2",
+                message0: "读取 %1 的 %2",
                 args0: [
                     {
                         type: "field_dropdown",
