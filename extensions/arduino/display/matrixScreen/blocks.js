@@ -18,9 +18,9 @@ function addBlocks (Blockly) {
     ]
     const angleList = [
         ["↑", "0"],
-        ["↓", "180"],
-        ["←", "270"],
-        ["→", "90"]
+        ["↓", "90"],
+        ["←", "135"],
+        ["→", "45"]
     ]
     const coordinates = [
         ["1", "1"],
