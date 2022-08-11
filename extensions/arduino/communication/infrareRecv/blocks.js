@@ -18,11 +18,11 @@ function addBlocks (Blockly) {
     ]
 
     const keyList = [
-        ["上", 1],
-        ["下", 2],
-        ["左", 3],
-        ["右", 4],
-        ["中", 5],
+        ["上", "1"],
+        ["下", "2"],
+        ["左", "3"],
+        ["右", "4"],
+        ["中", "5"],
     ]
 
     Blockly.Blocks.DBitInfrareRecv_read = {

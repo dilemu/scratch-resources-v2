@@ -7,8 +7,9 @@ function addGenerator (Blockly) {
         const [PIN, b] = pinList.split('-');
         const deviceName = `IR_${PIN}`;
         Blockly.Arduino.includes_.IR_read = `#include <IRremote.h>`
-        Blockly.Arduino.definitions_[deviceName] = `IRrecv ${deviceName}(${PIN});`;
-        return [`${deviceName}.decode()`, Blockly.Arduino.ORDER_ATOMIC];
+        Blockly.Arduino.definitions_[deviceName] = `IRremote_Receive ${deviceName};`;
+        Blockly.Arduino.setups_[deviceName] = `${deviceName}.begin(${PIN});`;
+        return [`${deviceName}.getIrCommand()`, Blockly.Arduino.ORDER_ATOMIC];
     }
     Blockly.Arduino.DBitInfrareRecv_detect = function (block) {
         const pinList = block.getFieldValue('PIN');
@@ -16,7 +17,8 @@ function addGenerator (Blockly) {
         const [PIN, b] = pinList.split('-');
         const deviceName = `IR_${PIN}`;
         Blockly.Arduino.includes_.InfrareRecv_read = `#include <IRremote.h>`
-        Blockly.Arduino.definitions_[deviceName] = `IRrecv ${deviceName}(${PIN});`;
+        Blockly.Arduino.definitions_[deviceName] = `IRremote_Receive ${deviceName};`;
+        Blockly.Arduino.setups_[deviceName] = `${deviceName}.begin(${PIN});`;
         return [`${deviceName}.KEYReturn(${key})`, Blockly.Arduino.ORDER_ATOMIC];
     }
     return Blockly;
