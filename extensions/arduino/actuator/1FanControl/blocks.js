@@ -10,8 +10,8 @@ function addBlocks (Blockly) {
     ]
 
     const directionList = [
-        ["正转", 1],
-        ["反转", 2]
+        ["正转", "1"],
+        ["反转", "2"]
     ]
 
     Blockly.Blocks.DBitFanControl_start = {

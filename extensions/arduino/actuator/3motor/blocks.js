@@ -10,8 +10,8 @@ function addBlocks (Blockly) {
     ]
 
     const direction = [
-        ["正转", 0],
-        ["反转", 1],
+        ["正转", "0"],
+        ["反转", "1"],
     ]
 
     Blockly.Blocks.DBitMotor_drive = {
