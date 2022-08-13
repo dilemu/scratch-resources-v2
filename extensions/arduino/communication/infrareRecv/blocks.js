@@ -10,8 +10,8 @@ function addBlocks (Blockly) {
         ["A4-A5", "A4-A5"],
         
         ["D2-D3", "2-3"],
-        ["D5-D6", "5-6"],
         ["D4-D7", "4-7"],
+        ["D5-D6", "5-6"],
 ["D8-D9", "8-9"],
         ["D10-D11", "10-11"],
         ["D12-D13", "12-13"]
@@ -28,7 +28,7 @@ function addBlocks (Blockly) {
     Blockly.Blocks.DBitInfrareRecv_read = {
         init: function () {
             this.jsonInit({
-                message0: "读取引 %1 的红外接收值",
+                message0: "读取 %1 的红外接收值",
                 args0: [
                     {
                         type: "field_dropdown",
