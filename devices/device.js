@@ -1,6 +1,7 @@
 module.exports = [
     // Buid-in device
     'arduinoNano',
+    'changwanban',
     'zhiquban',
     'zhangkongban',
     'microbit',
