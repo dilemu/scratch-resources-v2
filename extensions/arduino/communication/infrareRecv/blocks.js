@@ -5,16 +5,7 @@ function addBlocks (Blockly) {
     const colour = '#5867D6';
     const secondaryColour = '#888800';
     const digitalPins = [
-        ["A0-A1", "A0-A1"],
-        ["A2-A3", "A2-A3"],
-        ["A4-A5", "A4-A5"],
-        
         ["D2-D3", "2-3"],
-        ["D4-D7", "4-7"],
-        ["D5-D6", "5-6"],
-["D8-D9", "8-9"],
-        ["D10-D11", "10-11"],
-        ["D12-D13", "12-13"]
     ]
 
     const keyList = [
