@@ -5,6 +5,7 @@ function addGenerator (Blockly) {
     Blockly.Arduino.DBitRedAndFGreenLED_light = function (block) {
         const pinList = block.getFieldValue('PIN');
         const [a, b] = pinList.split('-');
+        Blockly.Arduino.setups_[`${a},${b}`] = `pinMode(${a}, OUTPUT);\n  pinMode(${b}, OUTPUT);`;
         const status = block.getFieldValue('STATUS');
         let code = '';
         switch (parseInt(status)) {
