@@ -8,7 +8,7 @@ function addToolbox () {
         <field name="PIN">2-3</field>
     </block>
     <block type="DBitInfrareRecv_detect">
-        <field name="PIN">D2-D3</field>
+        <field name="PIN">2-3</field>
         <field name="KEY">1</field>
     </block>
 </category>`;
