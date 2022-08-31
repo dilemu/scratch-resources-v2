@@ -20,8 +20,8 @@ function addBlocks (Blockly) {
         ["全部", "0"],
         ["第一个", "1"],
         ["第二个", "2"],
-        ["第三个", "4"],
-        ["第四个", "3"],
+        ["第三个", "3"],
+        ["第四个", "4"],
     ]
 
     Blockly.Blocks.DBitRGBLED_display = {
