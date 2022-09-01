@@ -17,7 +17,7 @@
  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-#include "servo.h"
+#include "servo1.h"
 
 #if defined(NRF5) || defined(NRF52833)
 #include "Microbit_Pwm.h"
@@ -238,7 +238,7 @@ static boolean isTimerActive(timer16_Sequence_t timer)
 
 /****************** end of static functions ******************************/
 
-Servo::Servo()
+ServoDF::ServoDF()
 {
 #if defined(__AVR__)
   if( ServoCount < MAX_SERVOS) {
@@ -250,7 +250,7 @@ Servo::Servo()
 #endif
 }
 
-uint8_t Servo::attach(int pin)
+uint8_t ServoDF::attach(int pin)
 {
 #if defined(__AVR__)
      return this->attach(pin, MIN_PULSE_WIDTH, MAX_PULSE_WIDTH);
@@ -283,7 +283,7 @@ uint8_t Servo::attach(int pin)
 #endif
 }
 #if defined(__AVR__)
-uint8_t Servo::attach(int pin, int min, int max)
+uint8_t ServoDF::attach(int pin, int min, int max)
 {
   if(this->servoIndex < MAX_SERVOS ) {
     pinMode( pin, OUTPUT) ;                                   // set servo pin to output
@@ -301,7 +301,7 @@ uint8_t Servo::attach(int pin, int min, int max)
 }
 #endif
 
-void Servo::detach()
+void ServoDF::detach()
 {
 #if defined(__AVR__)
   servos[this->servoIndex].Pin.isActive = false;
@@ -312,7 +312,7 @@ void Servo::detach()
  #endif
 }
 
-void Servo::angle(int value)
+void ServoDF::angle(int value)
 {
   if(value == angle_value) return;
   angle_value = value;
@@ -350,7 +350,7 @@ void Servo::angle(int value)
 }
 
 #if defined(ARDUINO_AVR_MEGA2560)
-void Servo::angle(int pin, int value)
+void ServoDF::angle(int pin, int value)
 {
     if(servos[this->servoIndex].Pin.isActive == false){
         attach(pin);
@@ -361,7 +361,7 @@ void Servo::angle(int pin, int value)
 
 
 #if defined(__AVR__)
-void Servo::writeMicroseconds(int value)
+void ServoDF::writeMicroseconds(int value)
 {
   // calculate and store the values for the given channel
   byte channel = this->servoIndex;
@@ -382,12 +382,12 @@ void Servo::writeMicroseconds(int value)
   }
 }
 
-int Servo::read() // return the value as degrees
+int ServoDF::read() // return the value as degrees
 {
   return  map( this->readMicroseconds()+1, SERVO_MIN(), SERVO_MAX(), 0, 180);
 }
 
-int Servo::readMicroseconds()
+int ServoDF::readMicroseconds()
 {
   unsigned int pulsewidth;
   if( this->servoIndex != INVALID_SERVO )
@@ -398,7 +398,7 @@ int Servo::readMicroseconds()
   return pulsewidth;
 }
 
-bool Servo::attached()
+bool ServoDF::attached()
 {
   return servos[this->servoIndex].Pin.isActive ;
 }

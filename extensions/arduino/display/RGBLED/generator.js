@@ -15,6 +15,17 @@ function addGenerator (Blockly) {
         const code = `${deviceName}.colorWipeSingle(${index}, ${red}, ${green}, ${blue});\n`;
         return code;
     }
+
+    Blockly.Arduino.DBitRGBLED_setBrightness = function(block) {
+        const pinList = block.getFieldValue('PIN');
+        const [PIN, b] = pinList.split('-');
+        const deviceName = `RGBLED_${PIN}`;
+        const brightness = Blockly.Arduino.valueToCode(block, 'BRIGHT', Blockly.Arduino.ORDER_ATOMIC);
+        Blockly.Arduino.includes_.DBitRGBLED_display = `#include <ws2812b.h>`
+        Blockly.Arduino.definitions_[deviceName] = `Adafruit_NeoPixel ${deviceName} = Adafruit_NeoPixel(4, ${PIN}, NEO_GRB + NEO_KHZ800);`;
+        const code = `${deviceName}.setBrightness(${brightness});\n`;
+        return code;
+    }
     return Blockly;
 }
 

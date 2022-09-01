@@ -22,6 +22,14 @@ function addToolbox () {
             </shadow>
         </value>
     </block>
+    <block type="DBitRGBLED_setBrightness" id="DBitRGBLED_setBrightness">
+        <field name="PIN">A0-A1</field>
+        <value name="BRIGHT">
+            <shadow type="math_uint8_number">
+                <field name="NUM">50</field>
+            </shadow>
+        </value>
+    </block>
 </category>`;
 }
 

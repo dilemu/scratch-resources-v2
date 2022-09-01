@@ -58,6 +58,27 @@ function addBlocks (Blockly) {
         }
     };
 
+    Blockly.Blocks.DBitRGBLED_setBrightness = {
+        init: function() {
+            this.jsonInit({
+                message0: '设置 %1的全彩灯亮度为 %2',
+                args0: [
+                    {
+                        type: "field_dropdown",
+                        name: "PIN",
+                        options: digitalPins
+                    },
+                    {
+                        type: "input_value",
+                        name: "BRIGHT"
+                    }
+                ],
+                colour: colour,
+                extensions: ['shape_statement']
+            })
+        }
+    }
+
     return Blockly;
 }
 
