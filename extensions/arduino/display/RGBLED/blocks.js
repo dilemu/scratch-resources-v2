@@ -35,9 +35,8 @@ function addBlocks (Blockly) {
                         options: digitalPins
                     },
                     {
-                        type: "field_dropdown",
-                        name: "INDEX",
-                        options: LEDIndex
+                        type: "input_value",
+                        name: "INDEX"
                     },
                     {
                         type: "input_value",
@@ -53,7 +52,8 @@ function addBlocks (Blockly) {
                     }
                 ],
                 colour: colour,
-                extensions: ['shape_statement']
+                extensions: ['shape_statement'],
+                outputShape: Blockly.OUTPUT_SHAPE_ROUND,
             })
         }
     };
@@ -75,6 +75,23 @@ function addBlocks (Blockly) {
                 ],
                 colour: colour,
                 extensions: ['shape_statement']
+            })
+        }
+    }
+
+    Blockly.Blocks.sensing_keyoptions = {
+        init: function() {
+            this.jsonInit({
+                "message0": "%1",
+                "args0": [
+                    {
+                        "type": "field_dropdown",
+                        "name": "INDEX",
+                        "options": LEDIndex
+                    }
+                ],
+                "colour": colour,
+                "extensions": ["colours_sensing", "output_string"]
             })
         }
     }

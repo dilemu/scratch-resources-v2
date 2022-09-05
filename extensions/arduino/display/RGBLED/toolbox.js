@@ -6,6 +6,9 @@ function addToolbox () {
 <category name="%{BKY_DBITRGBLED_CATEGORY}" id="DBITRGBLED_CATEGORY" colour="#32C850" secondaryColour="#32C850">
     <block type="DBitRGBLED_display" id="DBitRGBLED_display">
         <field name="PIN">A0-A1</field>
+        <value name="INDEX">
+            <shadow type="sensing_keyoptions"/>
+        </value>
         <value name="RED">
             <shadow type="math_uint8_number">
                 <field name="NUM">100</field>
