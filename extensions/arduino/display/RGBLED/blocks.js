@@ -52,8 +52,7 @@ function addBlocks (Blockly) {
                     }
                 ],
                 colour: colour,
-                extensions: ['shape_statement'],
-                outputShape: Blockly.OUTPUT_SHAPE_ROUND,
+                extensions: ['shape_statement']
             })
         }
     };
