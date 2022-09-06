@@ -90,7 +90,7 @@ function addBlocks (Blockly) {
                     }
                 ],
                 "colour": colour,
-                "extensions": ["colours_sensing", "output_string"]
+                "extensions": ["output_string"]
             })
         }
     }
