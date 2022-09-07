@@ -5,7 +5,7 @@ function addToolbox () {
     return `
 <category name="%{BKY_SERVO}" id="SERVO" colour="#00AAFF" secondaryColour="#00AAFF">
     <block type="DBitServo_drive" id="DBitServo_drive">
-        <field name="PIN">D2</field>
+        <field name="PIN">2</field>
         <value name="SPEED">
             <shadow type="math_half_angle">
                 <field name="NUM">90</field>
