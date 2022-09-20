@@ -7,10 +7,9 @@ function addGenerator (Blockly) {
         const [a, b] = pinList.split('-');
         const speed = Blockly.Arduino.valueToCode(block, 'SPEED', Blockly.Arduino.ORDER_ATOMIC);
         const _direction = block.getFieldValue('DIRECTION');
-        let direction;
-        if(_direction == 0) direction = a;
-        if(_direction == 1) direction = b;
-        const code = `analogWrite(${direction}, ${speed});\n`;
+        let code;
+        if (_direction == 0) code = `analogWrite(${a}, ${speed});\nanalogWrite(${b}, 0);\n`;
+        if (_direction == 1) code = `analogWrite(${b}, ${speed});\nanalogWrite(${a}, 0);\n`;
         return code;
     }
     return Blockly;
