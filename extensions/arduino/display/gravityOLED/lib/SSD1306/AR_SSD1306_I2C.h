@@ -1,6 +1,6 @@
 /*!
- * @file DFRobot_SSD1306_I2C.h
- * @brief Define the basic structure of class DFRobot_SSD1306_I2C
+ * @file AR_SSD1306_I2C.h
+ * @brief Define the basic structure of class AR_SSD1306_I2C
  * @copyright   Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
  * @licence     The MIT License (MIT)
  * @author [lixin](xin.li@dfrobot.com)
@@ -9,10 +9,10 @@
  */
 
 
-#ifndef DFROBOT_SSD1306_I2C_H
-#define DFROBOT_SSD1306_I2C_H
+#ifndef AR_SSD1306_I2C_H
+#define AR_SSD1306_I2C_H
 
-#include "DFRobot_SSD1306.h"
+#include "AR_SSD1306.h"
 #include "Wire.h"
 
 #define SSD1306_I2CBEGIN()        Wire.setClock(400000);
@@ -20,20 +20,20 @@
 
 
 /**
-  * Class definition for DFRobot_SSD1306_I2C.
+  * Class definition for AR_SSD1306_I2C.
   *
-  * Represents an instance of DFRobot_SSD1306 that accepts the I2C version of SSD1306
+  * Represents an instance of AR_SSD1306 that accepts the I2C version of SSD1306
   */
-class DFRobot_SSD1306_I2C : public DFRobot_SSD1306
+class AR_SSD1306_I2C : public AR_SSD1306
 {
 public:
 
     /**
      * Constructor
      *
-     * @brief Create an instance of DFRobot_SSD1306_I2C
+     * @brief Create an instance of AR_SSD1306_I2C
      */
-    DFRobot_SSD1306_I2C();
+    AR_SSD1306_I2C();
 
 private:
 
@@ -83,4 +83,4 @@ private:
     int writeByte(uint8_t address, uint8_t reg, uint8_t data);
 };
 
-#endif // DFROBOT_SSD1306_I2C_H
+#endif // AR_SSD1306_I2C_H

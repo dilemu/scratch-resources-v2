@@ -1,5 +1,5 @@
-#ifndef DFROBOT_ASCIIFONT_H
-#define DFROBOT_ASCIIFONT_H
+#ifndef AR_ASCIIfont_H
+#define AR_ASCIIfont_H
 #include "Arduino.h"
 
 #ifdef AVR

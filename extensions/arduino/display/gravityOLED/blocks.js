@@ -55,19 +55,11 @@ function addBlocks (Blockly) {
                     },
                     {
                         type: "input_value",
-                        name: "XCOOR",
-                        value: 0,
-                        precision: 1,
-                        min: 0,
-                        max: 127
+                        name: "XCOOR"
                     },
                     {
                         type: "input_value",
-                        name: "YCOOR",
-                        value: 0,
-                        precision: 1,
-                        min: 0,
-                        max: 63
+                        name: "YCOOR"
                     }
                 ],
                 "colour": colour,

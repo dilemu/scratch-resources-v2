@@ -1,6 +1,6 @@
 /*!
- * @file DFRobot_SSD1306.h
- * @brief Define the basic structure of class DFRobot_SSD1306
+ * @file AR_SSD1306.h
+ * @brief Define the basic structure of class AR_SSD1306
  * @copyright   Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
  * @licence     The MIT License (MIT)
  * @author [lixin](xin.li@dfrobot.com)
@@ -9,13 +9,13 @@
  */
 
 
-#ifndef DFROBOT_SSD1306_H
-#define DFROBOT_SSD1306_H
+#ifndef AR_SSD1306_H
+#define AR_SSD1306_H
 
 #include <Arduino.h>
 #include <Wire.h>
-#include <DFRobot_ASCIIfont.h>
-#include <DFRobot_CHfont.h>
+#include <AR_ASCIIfont.h>
+#include <AR_CHfont.h>
 
 #define SSD1306_CHARGEPUMP              0x8D
 #define SSD1306_COLUMNADDR              0x21
@@ -65,16 +65,16 @@ typedef struct chcode{
 /**
   * Base class displayed by SSD1306.
   *
-  * Can't be instantiated directly (use DFRobot_SSD1306_I2C)
+  * Can't be instantiated directly (use AR_SSD1306_I2C)
   */
-class DFRobot_SSD1306
+class AR_SSD1306
 {
 public:
 
     /**
      * Constructor
     */
-    DFRobot_SSD1306();
+    AR_SSD1306();
 
     /**
       * @brief Set the slave address and initialize the chip
@@ -335,9 +335,9 @@ public:
       */
     void printLine(int64_t i){printLine((int32_t)i);}
 
-#if defined(ARDUINO_ESP32_DEV) || defined(NRF5) || defined(NRF52833) 
+#if defined(ARDUINO_ESP32_DEV) || defined(NRF5) || defined(NRF52833)
   /**
-    * @brief Clear the same line 
+    * @brief Clear the same line
     *
     * @param line: Select row
     *
@@ -633,7 +633,7 @@ private:
 
 };
 
-#endif // DFROBOT_SSD1306_H
+#endif // AR_SSD1306_H
 
 
 

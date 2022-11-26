@@ -1,6 +1,6 @@
 /*!
- * @file DFRobot_SSD1306.cpp
- * @brief Define the basic structure of class DFRobot_SSD1306
+ * @file AR_SSD1306.cpp
+ * @brief Define the basic structure of class AR_SSD1306
  * @copyright   Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
  * @licence     The MIT License (MIT)
  * @author [lixin](xin.li@dfrobot.com)
@@ -9,7 +9,7 @@
  */
 
 
-#include "DFRobot_SSD1306.h"
+#include "AR_SSD1306.h"
 #if defined(ARDUINO_ESP32_DEV)
 #include "MPython_Font.h"
 #endif
@@ -18,7 +18,7 @@
 /**
  * Constructor
 */
-DFRobot_SSD1306::DFRobot_SSD1306() : 
+AR_SSD1306::AR_SSD1306() :
     brushColor(1),
     cursorX(0),
     cursorY(0),
@@ -37,7 +37,7 @@ DFRobot_SSD1306::DFRobot_SSD1306() :
   *
   * @param address: 8-bit I2C slave address [ addr | 0 ]
   */
-void DFRobot_SSD1306::begin(uint32_t address)
+void AR_SSD1306::begin(uint32_t address)
 {
     this->address = address;
     Wire.begin();
@@ -76,7 +76,7 @@ void DFRobot_SSD1306::begin(uint32_t address)
 /**
   * @brief Turn on the display
   */
-void DFRobot_SSD1306::displayON()
+void AR_SSD1306::displayON()
 {
     writeByte(this->address, SSD1306_WRITECMD, 0xaf);
 }
@@ -84,7 +84,7 @@ void DFRobot_SSD1306::displayON()
 /**
   * @brief Display shutdown
   */
-void DFRobot_SSD1306::displayOFF(void)
+void AR_SSD1306::displayOFF(void)
 {
     writeByte(this->address, SSD1306_WRITECMD, 0xae);
 }
@@ -94,7 +94,7 @@ void DFRobot_SSD1306::displayOFF(void)
   *
   * @param color: Set to 0 to show all black, set to 1 to display all white
   */
-void DFRobot_SSD1306::fillScreen(uint32_t color)
+void AR_SSD1306::fillScreen(uint32_t color)
 {
 #if defined(ARDUINO_ESP32_DEV) || defined(NRF5)||defined(NRF52833)
     if(color) {
@@ -125,7 +125,7 @@ void DFRobot_SSD1306::fillScreen(uint32_t color)
   *
   * @param color: Set to 0 to show all black, set to 1 to display all white
   */
-void DFRobot_SSD1306::fillInLine(uint32_t line, uint32_t color)
+void AR_SSD1306::fillInLine(uint32_t line, uint32_t color)
 {
     line = constrain(line, 1, 4);
 #if defined(ARDUINO_ESP32_DEV) || defined(NRF5)||defined(NRF52833)
@@ -155,7 +155,7 @@ void DFRobot_SSD1306::fillInLine(uint32_t line, uint32_t color)
   *
   * @param color: Set to 0 to show all black, set to 1 to display all white
   */
-void DFRobot_SSD1306::setBrushColor(uint32_t color)
+void AR_SSD1306::setBrushColor(uint32_t color)
 {
     brushColor = color;
 }
@@ -165,7 +165,7 @@ void DFRobot_SSD1306::setBrushColor(uint32_t color)
   *
   * @param color: Get to 0 to show all black, set to 1 to display all white
   */
-uint32_t DFRobot_SSD1306::getBrushColor()
+uint32_t AR_SSD1306::getBrushColor()
 {
     return brushColor;
 }
@@ -177,7 +177,7 @@ uint32_t DFRobot_SSD1306::getBrushColor()
   *
   * @param y: y coordinate
   */
-void DFRobot_SSD1306::setCursor(int32_t x, int32_t y)
+void AR_SSD1306::setCursor(int32_t x, int32_t y)
 {
 #if defined(ARDUINO_ESP32_DEV) || defined(NRF5)||defined(NRF52833)
     if(x<0) x=0;
@@ -213,7 +213,7 @@ void DFRobot_SSD1306::setCursor(int32_t x, int32_t y)
   *
   * @param line: Rows
   */
-void DFRobot_SSD1306::setCursorLine(int32_t line)
+void AR_SSD1306::setCursorLine(int32_t line)
 {
     line = constrain(line, 1, 4);
     cursorLine = line%4;
@@ -226,7 +226,7 @@ void DFRobot_SSD1306::setCursorLine(int32_t line)
   *
   * @param tp: External font dot matrix cache address
   */
-void DFRobot_SSD1306::setChCode(const chCode *tp)
+void AR_SSD1306::setChCode(const chCode *tp)
 {
     tpCode = (chCode *)tp;
 }
@@ -236,7 +236,7 @@ void DFRobot_SSD1306::setChCode(const chCode *tp)
   *
   * @param eRotation: angle
   */
-void DFRobot_SSD1306::setRotaion(eROTATION eRotation)
+void AR_SSD1306::setRotaion(eROTATION eRotation)
 {
 #if defined(ARDUINO_ESP32_DEV) || defined(NRF5)||defined(NRF52833)
     uint8_t buf[16];
@@ -254,13 +254,13 @@ void DFRobot_SSD1306::setRotaion(eROTATION eRotation)
     switch(eRotation) {
         case eROTATION_0:
             writeByte(this->address, SSD1306_WRITECMD, 0xa0);
-            writeByte(this->address, SSD1306_WRITECMD, 0xc0); 
+            writeByte(this->address, SSD1306_WRITECMD, 0xc0);
             break;
         case eROTATION_180:
             writeByte(this->address, SSD1306_WRITECMD, 0xa1);
             writeByte(this->address, SSD1306_WRITECMD, 0xc8);
             break;
-        default: 
+        default:
             writeByte(this->address, SSD1306_WRITECMD, 0xa1);
             writeByte(this->address, SSD1306_WRITECMD, 0xc8);
             break;
@@ -279,7 +279,7 @@ void DFRobot_SSD1306::setRotaion(eROTATION eRotation)
   *
   * @return Return 1 in the forward direction and -1 in the reverse direction
   */
-int DFRobot_SSD1306::getDirection(int value)
+int AR_SSD1306::getDirection(int value)
 {
     if (value >= 0)
         return 1;
@@ -297,7 +297,7 @@ int DFRobot_SSD1306::getDirection(int value)
   *
   * @return int
   */
-int DFRobot_SSD1306::ternaryExpression(bool condition, int o1, int o2)
+int AR_SSD1306::ternaryExpression(bool condition, int o1, int o2)
 {
     if(condition)
         return o1;
@@ -319,7 +319,7 @@ int DFRobot_SSD1306::ternaryExpression(bool condition, int o1, int o2)
   *
   * @param coverage: Set to true blank area will overwrite the previous pixel, set to false will not overwrite
   */
-void DFRobot_SSD1306::showMatrix(uint8_t x, uint8_t y, int width, int height, const uint8_t *pBuf, bool coverage)
+void AR_SSD1306::showMatrix(uint8_t x, uint8_t y, int width, int height, const uint8_t *pBuf, bool coverage)
 {
     if(!pBuf) return;
     if(x>127 || y>63) return;
@@ -409,7 +409,7 @@ void DFRobot_SSD1306::showMatrix(uint8_t x, uint8_t y, int width, int height, co
   *
   * @param pCh: Memory address of the text
   */
-void DFRobot_SSD1306::print(const char *pCh)
+void AR_SSD1306::print(const char *pCh)
 {
 #if defined(ARDUINO_ESP32_DEV)
     while(*pCh != '\0' && pCh != NULL)
@@ -594,7 +594,7 @@ void DFRobot_SSD1306::print(const char *pCh)
             }
             if(cursorY > 64)
                 return;
-        
+
             for(int i=0; i<16; i++)
             {
                 #ifdef AVR
@@ -617,7 +617,7 @@ void DFRobot_SSD1306::print(const char *pCh)
   *
   * @param i: uint32_t
   */
-void DFRobot_SSD1306::print(uint32_t i)
+void AR_SSD1306::print(uint32_t i)
 {
     char buffer[34];
     memset(buffer, 0, 34);
@@ -630,7 +630,7 @@ void DFRobot_SSD1306::print(uint32_t i)
   *
   * @param i: int32_t
   */
-void DFRobot_SSD1306::print(int32_t i)
+void AR_SSD1306::print(int32_t i)
 {
     char buffer[34];
     memset(buffer, 0, 34);
@@ -645,7 +645,7 @@ void DFRobot_SSD1306::print(int32_t i)
   *
   * @param precision: Number of reserved bits
   */
-void DFRobot_SSD1306::print(double f, int precision)
+void AR_SSD1306::print(double f, int precision)
 {
     String str;
     str = String(f,5);
@@ -667,7 +667,7 @@ void DFRobot_SSD1306::print(double f, int precision)
   *
   * @param pCh: Memory address of the text
   */
-void DFRobot_SSD1306::printLine(const char *pCh)
+void AR_SSD1306::printLine(const char *pCh)
 {
     int16_t X=0, Y = 16 * (cursorLine-1);
     fillInLine(cursorLine, brushColor == 1 ? 0 : 1);
@@ -825,7 +825,7 @@ void DFRobot_SSD1306::printLine(const char *pCh)
 
             if(X+8 > 128)
                 return;
-        
+
             for(int i=0; i<16; i++)
             {
                 #ifdef AVR
@@ -848,7 +848,7 @@ void DFRobot_SSD1306::printLine(const char *pCh)
   *
   * @param i: uint32_t
   */
-void DFRobot_SSD1306::printLine(uint32_t i)
+void AR_SSD1306::printLine(uint32_t i)
 {
     char buffer[34];
     memset(buffer, 0, 34);
@@ -861,7 +861,7 @@ void DFRobot_SSD1306::printLine(uint32_t i)
   *
   * @param i: int32_t
   */
-void DFRobot_SSD1306::printLine(int32_t i)
+void AR_SSD1306::printLine(int32_t i)
 {
     char buffer[34];
     memset(buffer, 0, 34);
@@ -876,7 +876,7 @@ void DFRobot_SSD1306::printLine(int32_t i)
   *
   * @param precision: Number of reserved bits
   */
-void DFRobot_SSD1306::printLine(double f, int precision)
+void AR_SSD1306::printLine(double f, int precision)
 {
     String str;
     str = String(f,5);
@@ -902,7 +902,7 @@ void DFRobot_SSD1306::printLine(double f, int precision)
   *
   * @param color: Set to 1 to display black, set to 0 to display white
   */
-void DFRobot_SSD1306::point(int32_t x, int32_t y, uint32_t color)
+void AR_SSD1306::point(int32_t x, int32_t y, uint32_t color)
 {
     x = max(min(x, 127), 0);
     y = max(min(y, 63), 0);
@@ -919,7 +919,7 @@ void DFRobot_SSD1306::point(int32_t x, int32_t y, uint32_t color)
   *
   * @param r: radius
   */
-void DFRobot_SSD1306::drawCircle(int32_t x0, int32_t y0, int32_t r)
+void AR_SSD1306::drawCircle(int32_t x0, int32_t y0, int32_t r)
 {
     r = abs(r);
     int16_t       varX = 0, varY = r;
@@ -955,7 +955,7 @@ void DFRobot_SSD1306::drawCircle(int32_t x0, int32_t y0, int32_t r)
   *
   * @param r: radius
   */
-void DFRobot_SSD1306::fillCircle(int32_t x0, int32_t y0, int32_t r)
+void AR_SSD1306::fillCircle(int32_t x0, int32_t y0, int32_t r)
 {
     r = abs(r);
     int16_t       varX = 0, varY = r;
@@ -979,7 +979,7 @@ void DFRobot_SSD1306::fillCircle(int32_t x0, int32_t y0, int32_t r)
 }
 
 /**
-    * @brief Clear the same line 
+    * @brief Clear the same line
     *
     * @param line: Select row
     *
@@ -989,7 +989,7 @@ void DFRobot_SSD1306::fillCircle(int32_t x0, int32_t y0, int32_t r)
     *
     * @param color: Set to 0 to clear the specified location
     */
-void DFRobot_SSD1306::fillScreenRange(int32_t line, int32_t column1, int32_t column2, uint32_t color)
+void AR_SSD1306::fillScreenRange(int32_t line, int32_t column1, int32_t column2, uint32_t color)
 {
     line = constrain(line, 0, 3);
     uint32_t c = getBrushColor();
@@ -1002,7 +1002,7 @@ void DFRobot_SSD1306::fillScreenRange(int32_t line, int32_t column1, int32_t col
         fill_x1 = column1;
         fill_x2 = column2;
     }
-    width = fill_x2-fill_x1; 
+    width = fill_x2-fill_x1;
     setBrushColor(color);
     rect(column1, line*16 ,width, 16, true);
     setBrushColor(c);
@@ -1019,7 +1019,7 @@ void DFRobot_SSD1306::fillScreenRange(int32_t line, int32_t column1, int32_t col
   *
   * @param y1: End point y coordinate
   */
-void DFRobot_SSD1306::line(int32_t x0, int32_t y0, int32_t x1, int32_t y1)
+void AR_SSD1306::line(int32_t x0, int32_t y0, int32_t x1, int32_t y1)
 {
     x0 = int(x0);
     y0 = int(y0);
@@ -1084,7 +1084,7 @@ void DFRobot_SSD1306::line(int32_t x0, int32_t y0, int32_t x1, int32_t y1)
   *
   * @param fill: Setting it to 0 will display a rectangular box on the screen, setting 1 will fill a rectangle on the screen.
   */
-void DFRobot_SSD1306::rect(int32_t x, int32_t y, int32_t width, int32_t height, bool fill)
+void AR_SSD1306::rect(int32_t x, int32_t y, int32_t width, int32_t height, bool fill)
 {
     int backspace = brushWidth/2 + brushWidth%2 - 1;
     if(width < 0)
@@ -1100,22 +1100,22 @@ void DFRobot_SSD1306::rect(int32_t x, int32_t y, int32_t width, int32_t height, 
     if(width == 0 && height == 0){
         return;
     }else if(width == 0){
-        for(int i=0; i<brushWidth; i++) 
+        for(int i=0; i<brushWidth; i++)
             VLineOnePixel(x-backspace+i, y-backspace, height+backspace*2);
     }else if(height == 0){
-        for(int i=0; i<brushWidth; i++) 
+        for(int i=0; i<brushWidth; i++)
             HLineOnePixel(x-backspace, y-backspace+i, width+backspace*2);
     }else if(fill){
         for(int i=0; i<height+2*backspace; i++)
             HLineOnePixel(x-backspace, y-backspace+i, width+backspace*2);
     }else{
-        for(int i=0; i<brushWidth; i++) 
+        for(int i=0; i<brushWidth; i++)
             HLineOnePixel(x-backspace, y-backspace+i, width+backspace*2);
-        for(int i=0; i<brushWidth; i++) 
+        for(int i=0; i<brushWidth; i++)
             HLineOnePixel(x-backspace, y+height-1-brushWidth/2+i, width+backspace*2);
-        for(int i=0; i<brushWidth; i++) 
+        for(int i=0; i<brushWidth; i++)
             VLineOnePixel(x-backspace+i, y-backspace, height+backspace*2);
-        for(int i=0; i<brushWidth; i++) 
+        for(int i=0; i<brushWidth; i++)
             VLineOnePixel(x+width-1-brushWidth/2+i, y-backspace, height+backspace*2);
     }
     regionalRefresh(x - backspace, y - backspace, width + backspace*2, height + backspace*2);
@@ -1134,7 +1134,7 @@ void DFRobot_SSD1306::rect(int32_t x, int32_t y, int32_t width, int32_t height, 
   *
   * @param image: Image cache address
   */
-void DFRobot_SSD1306::drawImage(int32_t x, int32_t y, int32_t width, int32_t height, const uint8_t *image)
+void AR_SSD1306::drawImage(int32_t x, int32_t y, int32_t width, int32_t height, const uint8_t *image)
 {
     if(width==0 && height==0 || !image) return;
     uint8_t _x = x, _y = y;
@@ -1184,7 +1184,7 @@ void DFRobot_SSD1306::drawImage(int32_t x, int32_t y, int32_t width, int32_t hei
   *
   * @note Only for drawing lines and drawing rectangles
   */
-void DFRobot_SSD1306::lineWidth(uint32_t w)
+void AR_SSD1306::lineWidth(uint32_t w)
 {
     w = w<1 ? 1 : w;
     brushWidth = w;
@@ -1199,7 +1199,7 @@ void DFRobot_SSD1306::lineWidth(uint32_t w)
   *
   * @param height: height
   */
-void DFRobot_SSD1306::VLineOnePixel(int16_t x, int16_t y, int16_t height)
+void AR_SSD1306::VLineOnePixel(int16_t x, int16_t y, int16_t height)
 {
     int8_t        direction = 1;
     int16_t       var1 = y + height;
@@ -1224,7 +1224,7 @@ void DFRobot_SSD1306::VLineOnePixel(int16_t x, int16_t y, int16_t height)
   *
   * @param width: width
   */
-void DFRobot_SSD1306::HLineOnePixel(int16_t x, int16_t y, int16_t width)
+void AR_SSD1306::HLineOnePixel(int16_t x, int16_t y, int16_t width)
 {
     int8_t        direction = 1;
     int16_t       var1 = x + width;
@@ -1249,7 +1249,7 @@ void DFRobot_SSD1306::HLineOnePixel(int16_t x, int16_t y, int16_t width)
   *
   * @param height: height
   */
-void DFRobot_SSD1306::VLine(int16_t x, int16_t y, int16_t height)
+void AR_SSD1306::VLine(int16_t x, int16_t y, int16_t height)
 {
     x = int(x);
     y = int(y);
@@ -1278,7 +1278,7 @@ void DFRobot_SSD1306::VLine(int16_t x, int16_t y, int16_t height)
   *
   * @param width: width
   */
-void DFRobot_SSD1306::HLine(int16_t x, int16_t y, int16_t width)
+void AR_SSD1306::HLine(int16_t x, int16_t y, int16_t width)
 {
     x = int(x);
     y = int(y);
@@ -1307,7 +1307,7 @@ void DFRobot_SSD1306::HLine(int16_t x, int16_t y, int16_t width)
   *
   * @param color: color
   */
-void DFRobot_SSD1306::writeBufferPixel(int16_t x, int16_t y, uint16_t color)
+void AR_SSD1306::writeBufferPixel(int16_t x, int16_t y, uint16_t color)
 {
     if(x<0 || x>127 || y<0 || y>63) return;
     int16_t addr = x + y / 8 * 128;
@@ -1329,7 +1329,7 @@ void DFRobot_SSD1306::writeBufferPixel(int16_t x, int16_t y, uint16_t color)
   *
   * @param height: height
   */
-void DFRobot_SSD1306::regionalRefresh(int16_t x, int16_t y, int16_t width, int16_t height)
+void AR_SSD1306::regionalRefresh(int16_t x, int16_t y, int16_t width, int16_t height)
 {
     int16_t xe = x+width-1;
     int16_t ye = y+height-1;

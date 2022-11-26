@@ -1,21 +1,21 @@
-#include "DFRobot_CHfont.h"
+#include "AR_CHfont.h"
 
-DFRobot_CHfont::DFRobot_CHfont()
+AR_CHfont::AR_CHfont()
 {
   listhead = NULL;
   gg = &listhead;
 }
 
-DFRobot_CHfont::~DFRobot_CHfont()
+AR_CHfont::~AR_CHfont()
 {
   freelist(gg);
 }
 
-void DFRobot_CHfont::freelist(chfont** codehead)
+void AR_CHfont::freelist(chfont** codehead)
 {
   chfont* myhead = NULL;
   if((*codehead) == NULL){
-    return;  
+    return;
   }
   while((*codehead)->next != NULL){
     myhead = (*codehead)->next;
@@ -29,7 +29,7 @@ void DFRobot_CHfont::freelist(chfont** codehead)
   }
 }
 
-chfont* DFRobot_CHfont::createNew(const ChFont* mycode)
+chfont* AR_CHfont::createNew(const ChFont* mycode)
 {
   chfont* newcode = (chfont*)malloc(sizeof(chfont));
   newcode->code = mycode;
@@ -37,10 +37,10 @@ chfont* DFRobot_CHfont::createNew(const ChFont* mycode)
   return newcode;
 }
 
-void DFRobot_CHfont::listAdd(chfont** codehead,const ChFont* mycode)
+void AR_CHfont::listAdd(chfont** codehead,const ChFont* mycode)
 {
   if(codehead == NULL){
-    return;  
+    return;
   }
   if(*codehead == NULL){
     *codehead = createNew(mycode);
@@ -48,7 +48,7 @@ void DFRobot_CHfont::listAdd(chfont** codehead,const ChFont* mycode)
   }
 
   chfont* codehead2 = *codehead;
-  
+
   while(codehead2 -> next != NULL) {
     codehead2=codehead2->next;
   }
@@ -58,4 +58,4 @@ void DFRobot_CHfont::listAdd(chfont** codehead,const ChFont* mycode)
 }
 
 
-DFRobot_CHfont DFFont;
+AR_CHfont DFFont;
