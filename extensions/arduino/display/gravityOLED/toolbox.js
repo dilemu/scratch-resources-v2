@@ -31,7 +31,7 @@ function addToolbox() {
             </shadow>
         </value>
         <value name="XCOOR">
-            <shadow type="math_uint8_number">
+            <shadow type="math_uint7_number">
                 <field name="XCOOR">0</field>
             </shadow>
         </value>
