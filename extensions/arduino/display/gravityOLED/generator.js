@@ -6,13 +6,15 @@ function addGenerator (Blockly) {
     Blockly.Arduino.GRAVITYOLED_init = function(block) {
         let text = Blockly.Arduino.valueToCode(block, 'TEXT', Blockly.Arduino.ORDER_ATOMIC);
         Blockly.Arduino.includes_.GRAVITYOLED_init = `#include <AR_SSD1306_I2C.h>;`
-        Blockly.Arduino.definitions_[deviceName] = `AR_SSD1306_I2C ${deviceName};`;
+        Blockly.Arduino.definitions_.GRAVITYOLED_define = `AR_SSD1306_I2C ${deviceName};`;
         return `${deviceName}.begin(${text});\n`;
     }
 
     Blockly.Arduino.GRAVITYOLED_setContent = function(block) {
         let line = Blockly.Arduino.valueToCode(block, 'LINE', Blockly.Arduino.ORDER_ATOMIC);
         let text = Blockly.Arduino.valueToCode(block, 'TEXT', Blockly.Arduino.ORDER_ATOMIC);
+        Blockly.Arduino.includes_.GRAVITYOLED_init = `#include <AR_SSD1306_I2C.h>;`
+        Blockly.Arduino.definitions_.GRAVITYOLED_define = `AR_SSD1306_I2C ${deviceName};`;
         return `${deviceName}.setCursorLine(${line});\n${deviceName}.printLine(${text});\n`;
     }
 
@@ -20,11 +22,15 @@ function addGenerator (Blockly) {
         let text = Blockly.Arduino.valueToCode(block, 'TEXT', Blockly.Arduino.ORDER_ATOMIC);
         let xCoor = Blockly.Arduino.valueToCode(block, 'XCOOR', Blockly.Arduino.ORDER_ATOMIC);
         let yCoor = Blockly.Arduino.valueToCode(block, 'YCOOR', Blockly.Arduino.ORDER_ATOMIC);
-        return `${deviceName}.setCursorLine(${xCoor},${yCoor});\n${deviceName}.print(${text});\n`;
+        Blockly.Arduino.includes_.GRAVITYOLED_init = `#include <AR_SSD1306_I2C.h>;`
+        Blockly.Arduino.definitions_.GRAVITYOLED_define = `AR_SSD1306_I2C ${deviceName};`;
+        return `${deviceName}.setCursor(${xCoor},${yCoor});\n${deviceName}.print(${text});\n`;
     }
 
     Blockly.Arduino.GRAVITYOLED_clear = function() {
-        return `${deviceName}.fillScreen(0);`;
+        Blockly.Arduino.includes_.GRAVITYOLED_init = `#include <AR_SSD1306_I2C.h>;`
+        Blockly.Arduino.definitions_.GRAVITYOLED_define = `AR_SSD1306_I2C ${deviceName};`;
+        return `${deviceName}.fillScreen(0);\n`;
     }
 
     return Blockly;

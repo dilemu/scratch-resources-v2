@@ -8,13 +8,13 @@ function addToolbox() {
     <block type="GRAVITYOLED_init" id="GRAVITYOLED_init">
        <value name="TEXT">
             <shadow type="text">
-                <field name="TEXT">0x3d</field>
+                <field name="TEXT">0x34</field>
             </shadow>
         </value>
     </block>
     <block type="GRAVITYOLED_setContent" id="GRAVITYOLED_setContent">
         <value name="LINE">
-            <shadow type="math_uint8_number">
+            <shadow type="math_number">
                 <field name="NUM">1</field>
             </shadow>
         </value>
@@ -27,7 +27,7 @@ function addToolbox() {
     <block type="GRAVITYOLED_setPlace" id="GRAVITYOLED_setPlace">
         <value name="TEXT">
             <shadow type="text">
-                <field name="TEXT">Mind+</field>
+                <field name="TEXT">DBit+</field>
             </shadow>
         </value>
         <value name="XCOOR">
